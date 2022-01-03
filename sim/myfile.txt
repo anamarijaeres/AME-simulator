@@ -1,0 +1,396 @@
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 4736
+Failed Blitz Txs:609
+Failed Blitz due to locked balance TXs:128
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4749
+Failed HTLC TXs:595
+Failed HTLC due to locked balance TXs:126
+Failed HTLC due to locked balance on failed_txs:4
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4751
+Failed Blitz Txs:1061
+Failed Blitz due to locked balance TXs:125
+Failed Blitz due to locked balance on failed_txs:13
+Successfully reached receiver in HTLC: 4763
+Failed HTLC TXs:1063
+Failed HTLC due to locked balance TXs:115
+Failed HTLC due to locked balance on failed_txs:11
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 4738
+Failed Blitz Txs:1532
+Failed Blitz due to locked balance TXs:143
+Failed Blitz due to locked balance on failed_txs:8
+Successfully reached receiver in HTLC: 4742
+Failed HTLC TXs:1535
+Failed HTLC due to locked balance TXs:136
+Failed HTLC due to locked balance on failed_txs:9
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.4
+Successfully reached receiver in Blitz: 4723
+Failed Blitz Txs:2014
+Failed Blitz due to locked balance TXs:142
+Failed Blitz due to locked balance on failed_txs:10
+Successfully reached receiver in HTLC: 4730
+Failed HTLC TXs:2020
+Failed HTLC due to locked balance TXs:117
+Failed HTLC due to locked balance on failed_txs:25
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 4746
+Failed Blitz Txs:2470
+Failed Blitz due to locked balance TXs:145
+Failed Blitz due to locked balance on failed_txs:12
+Successfully reached receiver in HTLC: 4743
+Failed HTLC TXs:2457
+Failed HTLC due to locked balance TXs:118
+Failed HTLC due to locked balance on failed_txs:53
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.6
+Successfully reached receiver in Blitz: 4783
+Failed Blitz Txs:2985
+Failed Blitz due to locked balance TXs:96
+Failed Blitz due to locked balance on failed_txs:5
+Successfully reached receiver in HTLC: 4779
+Failed HTLC TXs:2980
+Failed HTLC due to locked balance TXs:85
+Failed HTLC due to locked balance on failed_txs:23
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.7
+Successfully reached receiver in Blitz: 4763
+Failed Blitz Txs:3421
+Failed Blitz due to locked balance TXs:133
+Failed Blitz due to locked balance on failed_txs:17
+Successfully reached receiver in HTLC: 4755
+Failed HTLC TXs:3418
+Failed HTLC due to locked balance TXs:125
+Failed HTLC due to locked balance on failed_txs:30
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.8
+Successfully reached receiver in Blitz: 4724
+Failed Blitz Txs:3902
+Failed Blitz due to locked balance TXs:134
+Failed Blitz due to locked balance on failed_txs:19
+Successfully reached receiver in HTLC: 4734
+Failed HTLC TXs:3906
+Failed HTLC due to locked balance TXs:103
+Failed HTLC due to locked balance on failed_txs:44
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.9
+Successfully reached receiver in Blitz: 4761
+Failed Blitz Txs:4364
+Failed Blitz due to locked balance TXs:131
+Failed Blitz due to locked balance on failed_txs:28
+Successfully reached receiver in HTLC: 4772
+Failed HTLC TXs:4374
+Failed HTLC due to locked balance TXs:100
+Failed HTLC due to locked balance on failed_txs:48
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 1.0
+Successfully reached receiver in Blitz: 4783
+Failed Blitz Txs:4867
+Failed Blitz due to locked balance TXs:107
+Failed Blitz due to locked balance on failed_txs:26
+Successfully reached receiver in HTLC: 4790
+Failed HTLC TXs:4865
+Failed HTLC due to locked balance TXs:92
+Failed HTLC due to locked balance on failed_txs:43
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 4788
+Failed Blitz Txs:2496
+Failed Blitz due to locked balance TXs:97
+Failed Blitz due to locked balance on failed_txs:13
+Successfully reached receiver in HTLC: 4780
+Failed HTLC TXs:2493
+Failed HTLC due to locked balance TXs:91
+Failed HTLC due to locked balance on failed_txs:26
+
+No_of_txs: 5000
+Epoch size 1000
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4745
+Failed Blitz Txs:1056
+Failed Blitz due to locked balance TXs:146
+Failed Blitz due to locked balance on failed_txs:2
+Successfully reached receiver in HTLC: 4751
+Failed HTLC TXs:1070
+Failed HTLC due to locked balance TXs:120
+Failed HTLC due to locked balance on failed_txs:9
+
+No_of_txs: 5000
+Epoch size 1500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4773
+Failed Blitz Txs:1070
+Failed Blitz due to locked balance TXs:103
+Failed Blitz due to locked balance on failed_txs:8
+Successfully reached receiver in HTLC: 4769
+Failed HTLC TXs:1073
+Failed HTLC due to locked balance TXs:106
+Failed HTLC due to locked balance on failed_txs:5
+
+No_of_txs: 5000
+Epoch size 2000
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4735
+Failed Blitz Txs:1052
+Failed Blitz due to locked balance TXs:150
+Failed Blitz due to locked balance on failed_txs:10
+Successfully reached receiver in HTLC: 4735
+Failed HTLC TXs:1056
+Failed HTLC due to locked balance TXs:145
+Failed HTLC due to locked balance on failed_txs:11
+
+No_of_txs: 5000
+Epoch size 2500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4765
+Failed Blitz Txs:1065
+Failed Blitz due to locked balance TXs:119
+Failed Blitz due to locked balance on failed_txs:4
+Successfully reached receiver in HTLC: 4763
+Failed HTLC TXs:1061
+Failed HTLC due to locked balance TXs:121
+Failed HTLC due to locked balance on failed_txs:7
+
+No_of_txs: 5000
+Epoch size 3000
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4752
+Failed Blitz Txs:1059
+Failed Blitz due to locked balance TXs:130
+Failed Blitz due to locked balance on failed_txs:9
+Successfully reached receiver in HTLC: 4763
+Failed HTLC TXs:1052
+Failed HTLC due to locked balance TXs:113
+Failed HTLC due to locked balance on failed_txs:24
+
+No_of_txs: 5000
+Epoch size 3500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4724
+Failed Blitz Txs:1050
+Failed Blitz due to locked balance TXs:160
+Failed Blitz due to locked balance on failed_txs:10
+Successfully reached receiver in HTLC: 4711
+Failed HTLC TXs:1044
+Failed HTLC due to locked balance TXs:161
+Failed HTLC due to locked balance on failed_txs:26
+
+No_of_txs: 5000
+Epoch size 4000
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4778
+Failed Blitz Txs:1044
+Failed Blitz due to locked balance TXs:130
+Failed Blitz due to locked balance on failed_txs:3
+Successfully reached receiver in HTLC: 4773
+Failed HTLC TXs:1039
+Failed HTLC due to locked balance TXs:132
+Failed HTLC due to locked balance on failed_txs:10
+
+No_of_txs: 5000
+Epoch size 4500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4773
+Failed Blitz Txs:1056
+Failed Blitz due to locked balance TXs:122
+Failed Blitz due to locked balance on failed_txs:3
+Successfully reached receiver in HTLC: 4774
+Failed HTLC TXs:1063
+Failed HTLC due to locked balance TXs:108
+Failed HTLC due to locked balance on failed_txs:9
+
+No_of_txs: 5000
+Epoch size 5000
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4704
+Failed Blitz Txs:1075
+Failed Blitz due to locked balance TXs:160
+Failed Blitz due to locked balance on failed_txs:1
+Successfully reached receiver in HTLC: 4714
+Failed HTLC TXs:1069
+Failed HTLC due to locked balance TXs:151
+Failed HTLC due to locked balance on failed_txs:8
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 4745
+Failed Blitz Txs:1056
+Failed Blitz due to locked balance TXs:148
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4755
+Failed HTLC TXs:1056
+Failed HTLC due to locked balance TXs:125
+Failed HTLC due to locked balance on failed_txs:15
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 4738
+Failed Blitz Txs:1538
+Failed Blitz due to locked balance TXs:145
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4725
+Failed HTLC TXs:1537
+Failed HTLC due to locked balance TXs:138
+Failed HTLC due to locked balance on failed_txs:17
+
+No_of_txs: 5000
+Epoch size 50
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 4707
+Failed Blitz Txs:1531
+Failed Blitz due to locked balance TXs:174
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4715
+Failed HTLC TXs:1535
+Failed HTLC due to locked balance TXs:149
+Failed HTLC due to locked balance on failed_txs:15
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 4757
+Failed Blitz Txs:1535
+Failed Blitz due to locked balance TXs:135
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4767
+Failed HTLC TXs:1540
+Failed HTLC due to locked balance TXs:115
+Failed HTLC due to locked balance on failed_txs:8
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 4727
+Failed Blitz Txs:1544
+Failed Blitz due to locked balance TXs:145
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4730
+Failed HTLC TXs:1541
+Failed HTLC due to locked balance TXs:141
+Failed HTLC due to locked balance on failed_txs:4
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 4787
+Failed Blitz Txs:2476
+Failed Blitz due to locked balance TXs:123
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4789
+Failed HTLC TXs:2472
+Failed HTLC due to locked balance TXs:112
+Failed HTLC due to locked balance on failed_txs:14
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 4734
+Failed Blitz Txs:2456
+Failed Blitz due to locked balance TXs:177
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4750
+Failed HTLC TXs:2469
+Failed HTLC due to locked balance TXs:136
+Failed HTLC due to locked balance on failed_txs:20
+
+No_of_txs: 5000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 4778
+Failed Blitz Txs:2489
+Failed Blitz due to locked balance TXs:122
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 4787
+Failed HTLC TXs:2488
+Failed HTLC due to locked balance TXs:108
+Failed HTLC due to locked balance on failed_txs:10
+
+No_of_txs: 10000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 9276
+Failed Blitz Txs:4850
+Failed Blitz due to locked balance TXs:512
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 9304
+Failed HTLC TXs:4897
+Failed HTLC due to locked balance TXs:384
+Failed HTLC due to locked balance on failed_txs:67
+
+No_of_txs: 1000
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 981
+Failed Blitz Txs:503
+Failed Blitz due to locked balance TXs:6
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 981
+Failed HTLC TXs:503
+Failed HTLC due to locked balance TXs:5
+Failed HTLC due to locked balance on failed_txs:1
+
+No_of_txs: 1000
+Epoch size 300
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 980
+Failed Blitz Txs:501
+Failed Blitz due to locked balance TXs:9
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 981
+Failed HTLC TXs:502
+Failed HTLC due to locked balance TXs:7
+Failed HTLC due to locked balance on failed_txs:0
+
+No_of_txs: 1000
+Epoch size 100
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 971
+Failed Blitz Txs:505
+Failed Blitz due to locked balance TXs:9
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 972
+Failed HTLC TXs:504
+Failed HTLC due to locked balance TXs:10
+Failed HTLC due to locked balance on failed_txs:0
+
+No_of_txs: 1000
+Epoch size 50
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 969
+Failed Blitz Txs:507
+Failed Blitz due to locked balance TXs:8
+Failed Blitz due to locked balance on failed_txs:0
+Successfully reached receiver in HTLC: 969
+Failed HTLC TXs:506
+Failed HTLC due to locked balance TXs:9
+Failed HTLC due to locked balance on failed_txs:0
+

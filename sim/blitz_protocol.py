@@ -6,7 +6,7 @@ from protocol import Protocol, Contract
 from transactions import Transaction
 from utils import generate_keys_for_nodes, simulate_state_agreement, generate_tx_er, create_hash, make_hash
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
-    REVOKED, TX_ER_CHCEKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL
+    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL
 
 # this should be changed accordingly
 TIMELOCK = 10000
@@ -16,13 +16,16 @@ TIMELOCK_DELTA = 1000
 class BlitzProtocol(Protocol):
     version = ""
     force_revoke_enabled = False
+
     successfully_reached_receiver_txs = []
-
     successfully_reached_receiver_counter = 0
-    all_failedTxs = []
 
-    locked_balance_failure = []
-    locked_balance_onFailedtxs_failure = []
+    all_failedTxs = []
+    failed_purposely = []
+
+    final_failure = []
+    inflight_failure = []
+    collateral_failure = []
 
     '''
     @network -- [NetworkTopology]
@@ -58,9 +61,9 @@ class BlitzProtocol(Protocol):
     def continue_tx(self, tx: Transaction):
         status = tx.status
         if status == NOT_STARTED:
-            if not tx.find_path():
-                tx.status = FAILED
-                return
+            # if not tx.find_path():
+            #     tx.status = FAILED
+            #     return
             self.setup(tx)
             tx.status = SETUP_DONE
 
@@ -75,14 +78,14 @@ class BlitzProtocol(Protocol):
         elif status == FORWARDING:
             dchannel = tx.get_next_dchannel()
             if dchannel is None:
-                tx.status = TX_ER_CHCEKING
+                tx.status = TX_ER_CHECKING
             else:
                 prev_contract = tx.pending_contracts[0]
                 new_contract = self.create_next_contract(prev_contract, dchannel)
                 if not self.forward_contract(tx, new_contract):
                     tx.status = REVOKING
 
-        elif status == TX_ER_CHCEKING:
+        elif status == TX_ER_CHECKING:
             contractWithSender = tx.get_first_pending_contract()  # FIFO -- first in first out
             contractWithReciever = tx.get_last_pending_contract()  # LIFO -- last in first out
             assert contractWithSender is not None
@@ -92,7 +95,7 @@ class BlitzProtocol(Protocol):
                     # tx_er need to be published
                     tx.status == TX_ER_PUBLISHED
                 else:
-                    print("Tx_er OK! Starting the release phase")
+                    #print("Tx_er OK! Starting the release phase")
                     if BlitzProtocol.force_revoke_enabled == False:
                         if BlitzProtocol.version == "FastBlitz":
                             tx.status = RELEASING
@@ -119,16 +122,16 @@ class BlitzProtocol(Protocol):
 
         elif status == RELEASE_ALL:
             if tx.release_all():
-                print("Everybody released.")
+                #print("Everybody released.")
                 tx.status = SUCCESS
             else:
                 print("RELEASE_ALL ERROR")
 
         elif status == TX_ER_PUBLISHED:  # should this be separated from instant_revoking or is that an atomic action
             if tx.publish_tx_er():
-                print("Tx_er published")
+                #print("Tx_er published")
                 if tx.instantly_revoke():
-                    print("Everybody revoked")
+                    #print("Everybody revoked")
                     tx.status = FAILED
                 else:
                     print("Error while doing the instant revoke.")
@@ -191,23 +194,27 @@ class BlitzContract(Contract):
             if (
                     self.dchannel.locked_balance + self.dchannel.balance >= self.payment_amount > self.dchannel.min_htlc
             ):
-                ind= len(BlitzProtocol.locked_balance_failure)
-                BlitzProtocol.locked_balance_failure.append(tx)
-                tx.failed_bcs_of_locked_balance_blitz = True
+                ind = len(BlitzProtocol.inflight_failure)
+                BlitzProtocol.inflight_failure.append(tx)
+                tx.inflight_failure_blitz = True
 
+                # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data in self.dchannel.channel.data:
                     if data[0] in BlitzProtocol.all_failedTxs:
-                        lock_released=False
+                        lock_released = False
+                        # if the same tx which has gone through this channel has gone back and released the lock
                         for datatest in self.dchannel.channel.data:
-                            if data[0]==datatest[0] and (datatest[3]=='RELEASED' or datatest[3] == 'REVOKED'):
-                                lock_released=True
-                        if lock_released==False:
+                            if data[0] == datatest[0] and (datatest[3] == 'RELEASED' or datatest[3] == 'REVOKED'):
+                                lock_released = True
+                        if lock_released == False:
                             print("HERE")
-                            BlitzProtocol.locked_balance_failure.pop(ind)
-                            BlitzProtocol.locked_balance_onFailedtxs_failure.append(tx)
-                            tx.failed_bcs_of_locked_balance_blitz = False
-                            tx.failed_bcs_of_locked_balance_on_Failedtxs_blitz = True
+                            BlitzProtocol.inflight_failure.pop(ind)
+                            BlitzProtocol.collateral_failure.append(tx)
+                            tx.inflight_failure_blitz = False
+                            tx.collateral_failure_blitz = True
                             break
+            else:
+                BlitzProtocol.final_failure.append(tx)
             return False
         return True
 

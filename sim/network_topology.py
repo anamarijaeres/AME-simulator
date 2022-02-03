@@ -172,8 +172,7 @@ class NetworkTopology:
         directed_aggr_edges["total_fee"] = calculate_tx_fee(directed_aggr_edges, amount)
 
         # generate random risk factor
-        directed_aggr_edges["risk_factor"] = np.random.choice([1, 10, 100, 1000], size=directed_aggr_edges.shape[0],
-                                                              replace=True) #im not using this so it can stay
+        directed_aggr_edges["risk_factor"] = random.choices([1, 10, 100, 1000], k=directed_aggr_edges.shape[0]) #im not using this so it can stay
 
         # calculate routing weight
         directed_aggr_edges["routing_weight"] = calculate_routing_weight(directed_aggr_edges, amount)

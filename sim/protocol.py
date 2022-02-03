@@ -1,5 +1,5 @@
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
-    REVOKED, TX_ER_CHCEKING, TX_ER_PUBLISHED, INSTANT_REVOKING
+    REVOKED, TX_ER_PUBLISHED, INSTANT_REVOKING
 from transactions import Transaction
 
 from utils import generate_keys_for_nodes

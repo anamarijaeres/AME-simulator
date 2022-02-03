@@ -6,7 +6,11 @@ import hashlib
 import copy
 
 from crypto_utils import generate_key_pair,sign,verify
+#from sim.simulator import Simulator
 from transactions import Transaction
+
+
+
 
 '''
     Function that loads json file
@@ -95,8 +99,9 @@ def simulate_state_agreement(dchannel):
 '''
     Gets a random element from the elem_list
 '''
-def get_random_element(elem_list):
-    r = random.randint(0, len(elem_list) - 1)
+def get_random_element(elem_list,myRand):
+    r = myRand.randint(0, len(elem_list) - 1)
+    print(r)
     return elem_list[r], r
 
 

@@ -1,9 +1,10 @@
 
 from transactions import Transaction
-from utils import create_hash, create_preimage, get_random_string, generate_keys_for_nodes, simulate_state_agreement
+from utils import create_hash, create_preimage, get_random_string, generate_keys_for_nodes, simulate_state_agreement, \
+    generate_tx_er
 from protocol import Protocol, Contract
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
-    REVOKED, TX_ER_CHCEKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL,FINISHED_FORWARDING
+    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL,FINISHED_FORWARDING
 
 
 
@@ -14,22 +15,25 @@ class HTLCProtocol(Protocol):
     successfully_reached_receiver_txs = []
     successfully_reached_receiver_counter = 0
 
-    all_failedTxs=[]
+    all_failedTxs = []
+    failed_purposely = []
 
-    locked_balance_failure = []
-    locked_balance_onFailedtxs_failure = []
+    final_failure = []
+    inflight_failure = []
+    collateral_failure = []
 
     def setup(self, tx):
         generate_keys_for_nodes(tx)
         tx.preimage = create_preimage(tx)
         tx.preimage_hash = create_hash(tx.preimage)
 
+
     def continue_tx(self, tx):
         status = tx.status
         if status == NOT_STARTED:
-            if not tx.find_path():
-                tx.status = FAILED
-                return
+            # if not tx.find_path():
+            #     tx.status = FAILED
+            #     return
             self.setup(tx)
             tx.status = SETUP_DONE
 
@@ -55,6 +59,13 @@ class HTLCProtocol(Protocol):
 
         elif status == GO_IDLE:
             return
+
+        elif status == RELEASE_ALL:
+            if tx.release_all():
+                #print("Everybody released.")
+                tx.status = SUCCESS
+            else:
+                print("RELEASE_ALL ERROR")
 
         elif status == RELEASING:
             contract = tx.get_last_pending_contract()
@@ -108,24 +119,28 @@ class HTLCContract(Contract):
                     self.dchannel.locked_balance+ self.dchannel.balance >= self.payment_amount > self.dchannel.min_htlc
                     #self.timelock >0
             ):
-                ind= len(HTLCProtocol.locked_balance_failure)
-                HTLCProtocol.locked_balance_failure.append(tx)
-                tx.failed_bcs_of_locked_balance_htlc = True
+                ind= len(HTLCProtocol.inflight_failure)
+                HTLCProtocol.inflight_failure.append(tx)
+                tx.inflight_failure_htlc = True
+
+                # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data_htlc in self.dchannel.channel.data_htlc:
                     if data_htlc[0] in HTLCProtocol.all_failedTxs:
                         lock_released = False
+                        # if the same tx which has gone through this channel has gone back and released the lock
                         for datatest in self.dchannel.channel.data_htlc:
                             if data_htlc[0] == datatest[0] and (datatest[3]=='RELEASED' or datatest[3] == 'REVOKED'):
                                 lock_released = True
                         if lock_released == False:
                             print("HERE")
-                            HTLCProtocol.locked_balance_failure.pop(ind)
-                            HTLCProtocol.locked_balance_onFailedtxs_failure.append(tx)
-                            tx.failed_bcs_of_locked_balance_htlc = False
-                            tx.failed_bcs_of_locked_balance_on_Failedtxs_htlc = True
+                            HTLCProtocol.inflight_failure.pop(ind)
+                            HTLCProtocol.collateral_failure.append(tx)
+                            tx.inflight_failure_htlc = False
+                            tx.collateral_failure_htlc = True
                             break
+            else:
+                HTLCProtocol.final_failure.append(tx)
             return False
-
         return True
 
     def lock(self):

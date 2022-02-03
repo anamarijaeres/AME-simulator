@@ -2,12 +2,12 @@ import random
 import networkx as nx
 import numpy as np
 
-#from network_topology import NetworkTopology
-from constants import  NOT_STARTED
+# from network_topology import NetworkTopology
+from constants import NOT_STARTED
 import copy
 
-class Transaction:
 
+class Transaction:
     tx_counter = 0
 
     def __init__(self, network, src, trg, payment_amount):
@@ -25,17 +25,18 @@ class Transaction:
         self.total_amount_fees = 0
         self.curr_dchannel_index = 0
         self.curr_contract_index = 0
-        self.curr_contract_index_fromTheBack=0
-        self.tx_er=None
-        self.failed_purposely=False
-        self.failed_bcs_of_locked_balance_blitz=False
-        self.failed_bcs_of_locked_balance_on_Failedtxs_blitz= False
-        self.failed_bcs_of_locked_balance_htlc = False
-        self.failed_bcs_of_locked_balance_on_Failedtxs_htlc = False
+        self.curr_contract_index_fromTheBack = 0
+        self.tx_er = None
+        self.failed_purposely = False
+        self.inflight_failure_blitz = False
+        self.collateral_failure_blitz = False
+        self.inflight_failure_htlc = False
+        self.collateral_failure_htlc = False
 
     '''
         Gets the next channel for processing the tx
     '''
+
     def get_next_dchannel(self):
         if self.curr_dchannel_index >= len(self.dchannels_path):
             return None
@@ -46,17 +47,20 @@ class Transaction:
     '''
         Gets the contracts according to the LIFO principle
     '''
+
     def get_last_pending_contract(self):
         if self.curr_contract_index >= len(self.pending_contracts):
             return None
         contract = self.pending_contracts[self.curr_contract_index]
         self.curr_contract_index += 1
         return contract
+
     '''
         Gets the contracts according to the FIFO principle
     '''
+
     def get_first_pending_contract(self):
-        if self.curr_contract_index_fromTheBack <0:
+        if self.curr_contract_index_fromTheBack < 0:
             return None
         contract = self.pending_contracts[self.curr_contract_index_fromTheBack]
         self.curr_contract_index_fromTheBack -= 1
@@ -65,19 +69,20 @@ class Transaction:
     '''
         Calculates total fees excluding the sender
     '''
+
     def calculate_total_fees(self):
         if self.dchannels_path:
-            for idx,dc in enumerate(self.dchannels_path):
-                if idx==0: continue
+            for idx, dc in enumerate(self.dchannels_path):
+                if idx == 0: continue
                 self.total_amount_fees += dc.calculate_fee(self.payment_amount)
 
     '''
         Finds the shortest path and stores it into self.channels_path array
     '''
+
     def find_path(self):
         self.dchannels_path = []
         g = self.network.get_graph()
-
 
         try:
             # sometimes it cannot find a path between src and target (why?)
@@ -95,23 +100,29 @@ class Transaction:
                 print("ERROR!")
             current_src_pk = trg_pk
 
-        self.curr_contract_index_fromTheBack=len(self.dchannels_path)-1
+        self.curr_contract_index_fromTheBack = len(self.dchannels_path) - 1
         self.calculate_total_fees()
         return True
+
     '''
         Sets the field 'published' in tx_er in every contract to true. Now everybody can refund.
     '''
+
     def publish_tx_er(self):
         for contract in self.pending_contracts:
-            contract.tx_er['published']=True    #should this also be a marked event that node sees or is it enough that it will be seen as the revoke is done
+            contract.tx_er[
+                'published'] = True  # should this also be a marked event that node sees or is it enough that it will be seen as the revoke is done
         return True
+
     '''
         Revokes every contract in the pending_contracts field -- this should be done randomly implement this
     '''
+
     def instantly_revoke(self):
         for contract in self.pending_contracts:
             contract.revoke()
         return True
+
     '''
         Releases all the transactions immediately.
     '''
@@ -126,9 +137,10 @@ class TransactionGenerator:
     '''
     @network -- [NetworkTopology] contains nodes_map & channels_map
     '''
-    def __init__(self, networkBlitz,networkHtlc):
+
+    def __init__(self, networkBlitz, networkHtlc):
         self.networkBlitz = networkBlitz
-        self.networkHtlc=networkHtlc
+        self.networkHtlc = networkHtlc
 
     '''
         Function generates certain number of tx with the respective amount
@@ -136,37 +148,38 @@ class TransactionGenerator:
         @number_txs -- number of tx to generate
         @payment_amount -- upper bound OR the exact payment amount
     '''
+
     def generate(self, number_txs, payment_amount, one_amount_for_all_txs):
-        sources = np.random.choice(list(self.networkBlitz.nodes_map.values()), size=number_txs)
+        sources = random.choices(list(self.networkBlitz.nodes_map.values()), k=number_txs)
 
         txsBlitz = []
-        txsHTLC=[]
+        txsHTLC = []
 
         for src in sources:
-            srcHtlc= self.networkHtlc.nodes_map.get(src.pk)
+            srcHtlc = self.networkHtlc.nodes_map.get(src.pk)
             trg = random.sample(list(self.networkBlitz.nodes_map.values()), 1)[0]
-            trgHtlc=self.networkHtlc.nodes_map.get(trg.pk)
+            trgHtlc = self.networkHtlc.nodes_map.get(trg.pk)
             while trg == src:
                 trg = random.sample(list(self.networkBlitz.nodes_map.values()), 1)[0]
                 trgHtlc = self.networkHtlc.nodes_map.get(trg.pk)
             txsBlitz.append((src, trg))
-            txsHTLC.append((srcHtlc,trgHtlc))
+            txsHTLC.append((srcHtlc, trgHtlc))
 
         transactions = []
-        transactions_htlc=[]
+        transactions_htlc = []
         for src, trg in txsBlitz:
             if one_amount_for_all_txs:
                 transactions.append(Transaction(self.networkBlitz, src, trg, payment_amount))
             else:
-                amt=random.randint(0,payment_amount)
+                amt = random.randint(0, payment_amount)
                 transactions.append(Transaction(self.networkBlitz, src, trg, amt))
 
-        Transaction.tx_counter =0
-        for src,trg in txsHTLC:
+        Transaction.tx_counter = 0
+        for src, trg in txsHTLC:
             if one_amount_for_all_txs:
                 transactions_htlc.append(Transaction(self.networkHtlc, src, trg, payment_amount))
             else:
-                amt=random.randint(0,payment_amount)
+                amt = random.randint(0, payment_amount)
                 transactions_htlc.append(Transaction(self.networkHtlc, src, trg, amt))
 
-        return transactions,transactions_htlc
+        return transactions, transactions_htlc

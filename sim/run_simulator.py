@@ -1,3 +1,4 @@
+import random
 import sys
 from os import replace
 
@@ -14,6 +15,9 @@ from configparser import ConfigParser
 
 
 if __name__ =="__main__":
+
+    #random.seed(1)
+    #state=random.getstate()
     #instantiate parser for reading config file
     config=ConfigParser()
 
@@ -42,97 +46,109 @@ if __name__ =="__main__":
     tx_generator = TransactionGenerator(networkBlitz,networkHtlc)
     transactions,transactions_htlc = tx_generator.generate(params["number_of_transactions"], params["payment_amount"],params["one_amount_for_all_txs"])
 
-
-
-
-    # select the protocol htlc
-    htlc_protocol=HTLCProtocol(networkHtlc,HTLCContract)
-
-    simulatorHtlc=Simulator(htlc_protocol)
-    simulatorHtlc.epoch_size = epoch_size
-    simulatorHtlc.percentage_of_failed = percentage_of_failed
-    simulatorHtlc.simulate_transactions(transactions_htlc)
-
     # select the protocol Blitz
     # protocol = Protocol(network, Contract)
     protocol = BlitzProtocol(networkBlitz, BlitzContract, blitzVersion, force_revoke_enabled)
 
     # perform simulation
-    simulator = Simulator(protocol)
-    simulator.epoch_size = epoch_size
-    simulator.percentage_of_failed = percentage_of_failed
+    simulator = Simulator(protocol, epoch_size, percentage_of_failed)
+    # simulator.epoch_size = epoch_size
+    # simulator.percentage_of_failed = percentage_of_failed
     simulator.simulate_transactions(transactions)
 
+    print('htlc')
+    Simulator.stateSet=False
+    #random.setstate(state)
+    # select the protocol htlc
+    htlc_protocol=HTLCProtocol(networkHtlc,HTLCContract)
+
+    #simulatorHtlc=Simulator(htlc_protocol,epoch_size,percentage_of_failed)
+    simulator.protocol=htlc_protocol
+    simulator.epoch_size=epoch_size
+    simulator.percentage_of_failed=percentage_of_failed
+    simulator.simulate_transactions(transactions_htlc)
+    # simulatorHtlc.epoch_size = epoch_size
+    # simulatorHtlc.percentage_of_failed = percentage_of_failed
+    #simulatorHtlc.simulate_transactions(transactions_htlc)
+
+
+
     #print what have nodes along the path learned aboout a tx in Blitz
-    failedBlitz=[]
-    failed_bcs_to_locked_balance_blitz = []
-    failed_bcs_of_locked_balance_on_Failedtxs_blitz = []
+    # failedBlitz=[]
+    # inflight_failure = []
+    # collateral_failure = []
+    #
+    # for t in transactions:
 
-    for t in transactions:
-        print("Blitz \n"+ str(t.status)+ "  failed purposely:  " + str(t.failed_purposely))
-        if t.status ==FAILED and t.failed_bcs_of_locked_balance_blitz==True:
-            print("Failed because of locked balance")
-            failed_bcs_to_locked_balance_blitz.append(t)
-        elif t.status ==FAILED and t.failed_bcs_of_locked_balance_on_Failedtxs_blitz==True:
-            print("Failed because of locked balance on Failed txs")
-            failed_bcs_of_locked_balance_on_Failedtxs_blitz.append(t)
-        elif t.status==FAILED:  failedBlitz.append(t)
-        for dchannel in t.dchannels_path:
-            for data in dchannel.channel.data:
-                if data[0]==t.id:
-                    print(data)
-
-    failedHTLC = []
-    failed_bcs_to_locked_balance_htlc = []
-    failed_bcs_of_locked_balance_on_Failedtxs_htlc = []
-
-
-    for t in transactions_htlc:
-        print("HTLC \n" + str(t.status)+ "  failed purposely:  "+ str(t.failed_purposely))
-        if t.status ==FAILED and t.failed_bcs_of_locked_balance_htlc==True:
-            print("Failed because of locked balance")
-            failed_bcs_to_locked_balance_htlc.append(t)
-        elif t.status ==FAILED and t.failed_bcs_of_locked_balance_on_Failedtxs_htlc==True:
-            print("Failed because of locked balance on Failed txs")
-            failed_bcs_of_locked_balance_on_Failedtxs_htlc.append(t)
-        elif t.status==FAILED:
-                failedHTLC.append(t)
-        for dchannel in t.dchannels_path:
-            for data_htlc in dchannel.channel.data_htlc:
-                if data_htlc[0]==t.id:
-                    print(data_htlc)
-        print("\n\n")
+        # print("Blitz \n"+ str(t.status)+ "  failed purposely:  " + str(t.failed_purposely))
+        # if t.status == FAILED  and t.inflight_failure_blitz==True:
+        #     print("Failed because of locked balance")
+        #     inflight_failure.append(t)
+        # elif t.status ==FAILED and t.collateral_failure_blitz==True:
+        #     print("Failed because of locked balance on Failed txs")
+        #     collateral_failure.append(t)
+        # elif t.status==FAILED:  failedBlitz.append(t)
+    #     for dchannel in t.dchannels_path:
+    #         for data in dchannel.channel.data:
+    #             if data[0]==t.id:
+    #                 print(data)
+    #
+    # failedHTLC = []
+    # failed_bcs_to_locked_balance_htlc = []
+    # failed_bcs_of_locked_balance_on_Failedtxs_htlc = []
+    #
+    #
+    # for t in transactions_htlc:
+    #     print("HTLC \n" + str(t.status)+ "  failed purposely:  "+ str(t.failed_purposely))
+    #     if t.status ==FAILED and t.inflight_failure_htlc==True:
+    #         print("Failed because of locked balance")
+    #         failed_bcs_to_locked_balance_htlc.append(t)
+    #     elif t.status ==FAILED and t.collateral_failure_htlc==True:
+    #         print("Failed because of locked balance on Failed txs")
+    #         failed_bcs_of_locked_balance_on_Failedtxs_htlc.append(t)
+    #     elif t.status==FAILED:
+    #             failedHTLC.append(t)
+    #     for dchannel in t.dchannels_path:
+    #         for data_htlc in dchannel.channel.data_htlc:
+    #             if data_htlc[0]==t.id:
+    #                 print(data_htlc)
+    #     print("\n\n")
 
     print("Successfully reached receiver in Blitz: " + str(BlitzProtocol.successfully_reached_receiver_counter))
 
-    print("Failed Blitz Txs:" +str(len(failedBlitz)))
+    print("Failure done on purpose blitz txs:" + str(len(BlitzProtocol.failed_purposely)))
 
-    print("Failed Blitz due to locked balance TXs:" + str(len(failed_bcs_to_locked_balance_blitz)))
-    print(len(BlitzProtocol.locked_balance_failure))
+    print("Final failure blitz txs:" + str(len(BlitzProtocol.final_failure)))
 
-    print("Failed Blitz due to locked balance on failed_txs:" + str(len(failed_bcs_of_locked_balance_on_Failedtxs_blitz)))
-    print(len(BlitzProtocol.locked_balance_onFailedtxs_failure))
+    print("Inflight failure blitz txs:" + str(len(BlitzProtocol.inflight_failure)))
+
+    print("Collateral failure blitz txs:" + str(len(BlitzProtocol.collateral_failure)))
+
 
     print("Successfully reached receiver in HTLC: " + str(HTLCProtocol.successfully_reached_receiver_counter))
 
-    print("Failed HTLC TXs:" +str(len(failedHTLC)))
+    print("Failure done on purpose HTLC txs:" + str(len(HTLCProtocol.failed_purposely)))
 
-    print("Failed HTLC due to locked balance TXs:" + str(len(failed_bcs_to_locked_balance_htlc)))
-    print(len(HTLCProtocol.locked_balance_failure))
+    print("Final failure HTLC txs:" + str(len(HTLCProtocol.final_failure)))
 
-    print("Failed HTLC due to locked balance on failed_txs:" + str(len(failed_bcs_of_locked_balance_on_Failedtxs_htlc)))
-    print(len(HTLCProtocol.locked_balance_onFailedtxs_failure))
+    print("Inflight failure HTLC txs:" + str(len(HTLCProtocol.inflight_failure)))
+
+    print("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure)))
 
     file = open("myfile.txt", "a")  # append mode
-    file.write("No_of_txs: " + str(params["number_of_transactions"])+"\n")
+    file.write("No_of_accomplishable_txs: " + str(len(simulator.txs))+"\n")
     file.write("Epoch size " +str(epoch_size)+ "\n")
     file.write("Percentage of failed: "+ str(percentage_of_failed)+ "\n")
     file.write("Successfully reached receiver in Blitz: " + str(BlitzProtocol.successfully_reached_receiver_counter)+ "\n")
-    file.write("Failed Blitz Txs:" + str(len(failedBlitz))+ "\n")
-    file.write("Failed Blitz due to locked balance TXs:" + str(len(failed_bcs_to_locked_balance_blitz))+ "\n")
-    file.write("Failed Blitz due to locked balance on failed_txs:" + str(len(failed_bcs_of_locked_balance_on_Failedtxs_blitz))+ "\n")
+    file.write("Failure done on purpose blitz txs:" + str(len(BlitzProtocol.failed_purposely)) + "\n")
+    file.write("Final failure blitz txs:" + str(len(BlitzProtocol.final_failure))+ "\n")
+    file.write("Inflight failure blitz txs:" + str(len(BlitzProtocol.inflight_failure)) + "\n")
+    file.write("Collateral failure blitz txs:" + str(len(BlitzProtocol.collateral_failure)) + "\n")
     file.write("Successfully reached receiver in HTLC: " + str(HTLCProtocol.successfully_reached_receiver_counter)+ "\n")
-    file.write("Failed HTLC TXs:" + str(len(failedHTLC))+ "\n")
-    file.write("Failed HTLC due to locked balance TXs:" + str(len(failed_bcs_to_locked_balance_htlc))+ "\n")
-    file.write("Failed HTLC due to locked balance on failed_txs:" + str(len(failed_bcs_of_locked_balance_on_Failedtxs_htlc))+ "\n\n")
+    file.write("Failure done on purpose HTLC txs:" + str(len(HTLCProtocol.failed_purposely)) + "\n")
+    file.write("Final failure HTLC txs:" + str(len(HTLCProtocol.final_failure))+ "\n")
+    file.write("Inflight failure HTLC txs:" + str(len(HTLCProtocol.inflight_failure))+ "\n")
+    file.write("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure))+ "\n\n")
     file.close()
+
+

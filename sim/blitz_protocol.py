@@ -1,9 +1,7 @@
-import threading
 
 from network_topology import DirectedChannel
 from protocol import Protocol, Contract
-# from simulator import Simulator
-from transactions import Transaction
+
 from utils import generate_keys_for_nodes, simulate_state_agreement, generate_tx_er, create_hash, make_hash
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
     REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL
@@ -48,17 +46,13 @@ class BlitzProtocol(Protocol):
     def setup(self, tx):
         generate_keys_for_nodes(tx)
         tx.tx_er = generate_tx_er(tx)
-        # checkChannels-- happening in FindPath
-        # checkT -- check the timeout value if it is enough
-        # create TX in -- tx that fund the tx_er
-        # create TX er with function (TXer,rList,onion)=genTXEr( U0 , channelList, TX in )
-        # setup alpha 0
+
 
     '''
         Continues tx according to the current tx.status
     '''
 
-    def continue_tx(self, tx: Transaction):
+    def continue_tx(self, tx, round_counter,epoch_size):
         status = tx.status
         if status == NOT_STARTED:
             # if not tx.find_path():
@@ -116,8 +110,13 @@ class BlitzProtocol(Protocol):
             else:
                 tx.status = SUCCESS
 
+        #here  i have to set delay for all channels
         elif status == GO_IDLE:
-            # call a function in tx.that starts the timer which will automatically process the payment after a time T
+            if tx.premarked_as_failed == True:
+                tx.set_delays_blitz(round_counter,epoch_size)
+                tx.status = TX_ER_PUBLISHED
+            else:
+                tx.status=RELEASE_ALL
             return
 
         elif status == RELEASE_ALL:
@@ -128,6 +127,9 @@ class BlitzProtocol(Protocol):
                 print("RELEASE_ALL ERROR")
 
         elif status == TX_ER_PUBLISHED:  # should this be separated from instant_revoking or is that an atomic action
+            for delay in tx.delays_blitz:
+                if delay > round_counter:
+                    return
             if tx.publish_tx_er():
                 #print("Tx_er published")
                 if tx.instantly_revoke():
@@ -149,7 +151,7 @@ class BlitzProtocol(Protocol):
 
 class BlitzContract(Contract):
 
-    def __init__(self, tx: Transaction, dchannel: DirectedChannel):
+    def __init__(self, tx, dchannel: DirectedChannel):
         self.tx = tx
         self.dchannel = dchannel
         self.payment_amount = None
@@ -161,7 +163,7 @@ class BlitzContract(Contract):
         # generate TX r =genRef( TX state, theta)
 
     @classmethod
-    def new_contract(cls, tx: Transaction, next_dchannel: DirectedChannel):
+    def new_contract(cls, tx, next_dchannel: DirectedChannel):
         contract = cls(tx, next_dchannel)
         contract.payment_amount = tx.payment_amount + tx.total_amount_fees
         contract.tx_er = tx.tx_er  # instead of cash here is txer
@@ -183,7 +185,7 @@ class BlitzContract(Contract):
         Checks if the the next directed channel fulfills the conditions for forwarding the payment
     '''
 
-    def check(self, tx: Transaction):
+    def check(self, tx):
         if (
                 self.dchannel.balance < self.payment_amount or  # the balance is not enough
                 self.dchannel.min_htlc > self.payment_amount  # the payment amount is below the minimum

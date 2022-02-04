@@ -6,6 +6,8 @@ import numpy as np
 from constants import NOT_STARTED
 import copy
 
+from sim.simulator import Simulator
+
 
 class Transaction:
     tx_counter = 0
@@ -27,11 +29,18 @@ class Transaction:
         self.curr_contract_index = 0
         self.curr_contract_index_fromTheBack = 0
         self.tx_er = None
+
+        self.premarked_as_failed=False
+
+
         self.failed_purposely = False
         self.inflight_failure_blitz = False
         self.collateral_failure_blitz = False
         self.inflight_failure_htlc = False
         self.collateral_failure_htlc = False
+
+        self.delays_htlc=[]
+        self.delays_blitz=[]
 
     '''
         Gets the next channel for processing the tx
@@ -131,6 +140,23 @@ class Transaction:
         for contract in self.pending_contracts:
             contract.release()
         return True
+    '''
+        Delays are set in a way that first delay is a delay for the last channel on the path
+    '''
+    def set_delays_htlc(self,round_counter,epoch_size):
+        for i in range(0, len(self.dchannels_path)):
+            self.delays_htlc.append(round_counter + epoch_size * (i+1))
+
+    '''
+        Delays are set in a way that all delays are the same for the nodes on the path 
+    '''
+    def set_delays_blitz(self,round_counter,epoch_size):
+        for i in range(0,len(self.dchannels_path)):
+            self.delays_blitz.append(round_counter + epoch_size)
+
+
+
+
 
 
 class TransactionGenerator:
@@ -183,3 +209,19 @@ class TransactionGenerator:
                 transactions_htlc.append(Transaction(self.networkHtlc, src, trg, amt))
 
         return transactions, transactions_htlc
+    '''
+        Marking txs that will fail due to some attack -- griefing attack(attack on the receiver's side), changing tx_er or fee corruption (attack on the intermediary's side)
+        
+        Params:
+         @transactions -- [Transaction] array of txs in Blitz topology
+         @transactions_htlc -- [Transaction] array of txs in HTLC topology 
+    '''
+    def mark_failed_txs(self,transactions, transactions_htlc,pecentage_of_failed):
+        index_list=list(range(0,len(transactions)))
+        failed_indxs = random.choices(index_list, k=int(len(index_list)*pecentage_of_failed))
+
+        for i in  failed_indxs:
+            transactions[i].premarked_as_failed=True
+            transactions_htlc[i].premarked_as_failed=True
+
+        return transactions,transactions_htlc

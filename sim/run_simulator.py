@@ -46,8 +46,9 @@ if __name__ =="__main__":
     tx_generator = TransactionGenerator(networkBlitz,networkHtlc)
     transactions,transactions_htlc = tx_generator.generate(params["number_of_transactions"], params["payment_amount"],params["one_amount_for_all_txs"])
 
+    transactions,transactions_htlc= tx_generator.mark_failed_txs(transactions,transactions_htlc,percentage_of_failed)
+
     # select the protocol Blitz
-    # protocol = Protocol(network, Contract)
     protocol = BlitzProtocol(networkBlitz, BlitzContract, blitzVersion, force_revoke_enabled)
 
     # perform simulation

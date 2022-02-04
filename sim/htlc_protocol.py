@@ -1,15 +1,13 @@
-
-from transactions import Transaction
 from utils import create_hash, create_preimage, get_random_string, generate_keys_for_nodes, simulate_state_agreement, \
     generate_tx_er
 from protocol import Protocol, Contract
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
-    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL,FINISHED_FORWARDING
-
-
+    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL, \
+    FINISHED_FORWARDING
 
 TIMELOCK = 10000
 TIMELOCK_DELTA = 100
+
 
 class HTLCProtocol(Protocol):
     successfully_reached_receiver_txs = []
@@ -27,8 +25,7 @@ class HTLCProtocol(Protocol):
         tx.preimage = create_preimage(tx)
         tx.preimage_hash = create_hash(tx.preimage)
 
-
-    def continue_tx(self, tx):
+    def continue_tx(self, tx, round_counter,epoch_size):
         status = tx.status
         if status == NOT_STARTED:
             # if not tx.find_path():
@@ -58,11 +55,17 @@ class HTLCProtocol(Protocol):
                     tx.status = REVOKING
 
         elif status == GO_IDLE:
+            if tx.premarked_as_failed == True:
+                tx.set_delays_htlc(round_counter,epoch_size)
+                tx.status = REVOKING
+            else:
+                tx.status = RELEASE_ALL
             return
+
 
         elif status == RELEASE_ALL:
             if tx.release_all():
-                #print("Everybody released.")
+                # print("Everybody released.")
                 tx.status = SUCCESS
             else:
                 print("RELEASE_ALL ERROR")
@@ -76,6 +79,9 @@ class HTLCProtocol(Protocol):
                 tx.status = SUCCESS
 
         elif status == REVOKING:
+            if tx.curr_contract_index < len(tx.delays_htlc):
+                if tx.delays_htlc[tx.curr_contract_index] > round_counter:
+                    return
             contract = tx.get_last_pending_contract()
             if contract is not None:
                 contract.revoke()
@@ -103,23 +109,24 @@ class HTLCContract(Contract):
     @classmethod
     def get_next_contract(cls, prev_contract, next_dchannel):
         contract = cls(prev_contract.tx, next_dchannel)
-        contract.payment_amount = prev_contract.payment_amount - next_dchannel.calculate_fee(prev_contract.payment_amount)
+        contract.payment_amount = prev_contract.payment_amount - next_dchannel.calculate_fee(
+            prev_contract.payment_amount)
         contract.timelock = prev_contract.timelock - TIMELOCK_DELTA
         contract.preimage_hash = prev_contract.preimage_hash
         return contract
 
-    def check(self,tx:Transaction):
+    def check(self, tx):
         if (
-            self.dchannel.balance < self.payment_amount or  # the balance is not enough
-            self.dchannel.min_htlc > self.payment_amount  # the payment amount is below the minimum
-           # self.timelock < 0   # the timelock is not enough -- i dont think the timelock should be considered in this case
+                self.dchannel.balance < self.payment_amount or  # the balance is not enough
+                self.dchannel.min_htlc > self.payment_amount  # the payment amount is below the minimum
+                # self.timelock < 0   # the timelock is not enough -- i dont think the timelock should be considered in this case
         ):
-            #this checks if the failure happend due to the purposely failed transactions which locked coins
+            # this checks if the failure happend due to the purposely failed transactions which locked coins
             if (
-                    self.dchannel.locked_balance+ self.dchannel.balance >= self.payment_amount > self.dchannel.min_htlc
-                    #self.timelock >0
+                    self.dchannel.locked_balance + self.dchannel.balance >= self.payment_amount > self.dchannel.min_htlc
+                    # self.timelock >0
             ):
-                ind= len(HTLCProtocol.inflight_failure)
+                ind = len(HTLCProtocol.inflight_failure)
                 HTLCProtocol.inflight_failure.append(tx)
                 tx.inflight_failure_htlc = True
 
@@ -129,7 +136,7 @@ class HTLCContract(Contract):
                         lock_released = False
                         # if the same tx which has gone through this channel has gone back and released the lock
                         for datatest in self.dchannel.channel.data_htlc:
-                            if data_htlc[0] == datatest[0] and (datatest[3]=='RELEASED' or datatest[3] == 'REVOKED'):
+                            if data_htlc[0] == datatest[0] and (datatest[3] == 'RELEASED' or datatest[3] == 'REVOKED'):
                                 lock_released = True
                         if lock_released == False:
                             print("HERE")
@@ -145,7 +152,7 @@ class HTLCContract(Contract):
 
     def lock(self):
         assert self.dchannel is not None
-        self.dchannel.balance -= self.payment_amount #nothing about the fee here
+        self.dchannel.balance -= self.payment_amount  # nothing about the fee here
         self.dchannel.locked_balance += self.payment_amount
 
         simulate_state_agreement(self.dchannel)
@@ -168,7 +175,7 @@ class HTLCContract(Contract):
         self.dchannel.locked_balance -= self.payment_amount
         brother_channel = self.dchannel.get_brother_channel()
         brother_channel.balance += self.payment_amount
-        self.status= RELEASED
+        self.status = RELEASED
         self.save_data()
         return True
 
@@ -179,7 +186,7 @@ class HTLCContract(Contract):
 
         self.dchannel.balance += self.payment_amount
         self.dchannel.locked_balance -= self.payment_amount
-        self.status= REVOKED
+        self.status = REVOKED
         self.save_data()
 
     def save_data(self):
@@ -193,5 +200,5 @@ class HTLCContract(Contract):
             self.preimage
         ]
 
-        #print(contract_record)
+        # print(contract_record)
         self.dchannel.channel.data_htlc.append(tuple(contract_record))

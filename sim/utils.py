@@ -7,7 +7,7 @@ import copy
 
 from crypto_utils import generate_key_pair,sign,verify
 #from sim.simulator import Simulator
-from transactions import Transaction
+
 
 
 
@@ -117,7 +117,7 @@ def get_random_string(length):
      -- it can be set on private mode: id is a random bitstring
      -- or non-private mode: id is the pk of the sender 
 '''
-def generate_tx_er(tx:Transaction):
+def generate_tx_er(tx):
     random_stealth_addresses=[]
     for _ in range(len(tx.dchannels_path)):
         random_stealth_addresses.append(get_random_string(12))

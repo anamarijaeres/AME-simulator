@@ -57,8 +57,8 @@ if __name__ =="__main__":
     # simulator.percentage_of_failed = percentage_of_failed
     simulator.simulate_transactions(transactions)
 
-    print('htlc')
-    Simulator.stateSet=False
+    print("htlc")
+
     #random.setstate(state)
     # select the protocol htlc
     htlc_protocol=HTLCProtocol(networkHtlc,HTLCContract)

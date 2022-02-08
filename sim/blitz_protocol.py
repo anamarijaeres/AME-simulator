@@ -86,7 +86,7 @@ class BlitzProtocol(Protocol):
             if contractWithSender is not None:
                 if not contractWithSender.tx_er_check(contractWithReciever):
                     print("Tx_er has been tampered.")
-                    # tx_er need to be published
+                    # tx_er needs to be published
                     tx.status == TX_ER_PUBLISHED
                 else:
                     #print("Tx_er OK! Starting the release phase")

@@ -69,9 +69,17 @@ class Simulator():
                     all_done = False
                 else:
                     done_counter += 1
+
             if all_done:
                 # simulator is done with all txs
+                print(done_counter)
                 break
+
+            # percentage_of_done= done_counter/ len(self.txs)
+            # if percentage_of_done>0.85:
+            #     for tx in type(self.protocol).successfully_reached_receiver_txs:
+            #         if tx.status!= FAILED and tx.status!=SUCCESS:
+            #             self.protocol.continue_tx(tx, self.round_counter, self.epoch_size )
 
             # check if it is time for the next epoch
             # if len(type(self.protocol).successfully_reached_receiver_txs) == self.epoch_size:
@@ -80,7 +88,7 @@ class Simulator():
 
             # if Simulator.round_counter%self.epoch_size==0:
             #     self.go_to_next_epoch()
-
+            print(done_counter)
             # if there is no more txs to process do the last epoch and release all locked channels------------------------
             # if (len(self.txs) - done_counter-len(Simulator.failed_HTLC)-len(Simulator.failed_Blitz)) == idle_counter:
             #     self.go_to_next_epoch()
@@ -107,8 +115,15 @@ class Simulator():
                 self.round_counter += 1
 
             # if the TX_ER_CHECKING is set process it right away
-            if tx.status == TX_ER_CHECKING or tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL:
+            if tx.status == TX_ER_CHECKING:
                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+
+            if tx.status== GO_IDLE:
+                self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                # if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
+                #     self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+
+
 
             # if tx.status == FAILED or tx.status == SUCCESS or tx.status == GO_IDLE:
             #     # Tx finished or waiting the end of the epoch

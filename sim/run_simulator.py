@@ -1,8 +1,9 @@
 import random
 import sys
 from os import replace
-
+import unittest
 import numpy as np
+import pandas as pd
 
 from blitz_protocol import BlitzProtocol, BlitzContract
 from constants import FAILED
@@ -13,6 +14,27 @@ from simulator import Simulator
 from transactions import TransactionGenerator
 from configparser import ConfigParser
 
+EXECUTE_TESTS = 0	#Flag to activate/deactive the test cases TODO: Add this to config properly
+
+def all_tests( ):
+	test_data( )
+
+	
+def test_data( nodes_df, network_df ):
+    print( "========================")
+    print( "Starting test: test_data")
+    
+    ##Check that every node has at least one channel
+    node1_pub = pd.DataFrame(network_df["node1_pub"])
+    node1_pub = node1_pub.rename(columns={"node1_pub": "pub_key"})
+    node2_pub = pd.DataFrame(network_df["node2_pub"])
+    node2_pub = node2_pub.rename(columns={"node2_pub": "pub_key"})
+    all_pub_keys = pd.concat([node1_pub, node2_pub])
+    assert set(nodes_df.pub_key.isin(all_pub_keys["pub_key"]).astype(bool)) == set({True}), "ERROR: There is a node that does not involved in any channel"
+   
+
+    print( "test: test_data OK") 
+    print( "========================")
 
 if __name__ =="__main__":
 
@@ -35,6 +57,8 @@ if __name__ =="__main__":
 
     #preprocess the network data
     nodes_df, network_df = process_network_data(network_data)
+    if EXECUTE_TESTS:
+        test_data( nodes_df, network_df )
 
 
     # build the network topology - prepare the channels (make directed edges-->prepare them-->make channels)
@@ -151,5 +175,5 @@ if __name__ =="__main__":
     file.write("Inflight failure HTLC txs:" + str(len(HTLCProtocol.inflight_failure))+ "\n")
     file.write("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure))+ "\n\n")
     file.close()
-
-
+    
+    

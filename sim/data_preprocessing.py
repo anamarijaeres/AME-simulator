@@ -6,6 +6,9 @@ import pandas as pd
 NODE_KEYS = ["pub_key", "last_update"]
 CHANNEL_KEYS = ["node1_pub", "node2_pub", "last_update", "capacity", "channel_id", 'node1_policy', 'node2_policy']
 
+NUM_PARAMS = 3 #Number + 1 of parameters expected by the program
+#Param 1: json_file: A json file with the description of the graph, formatted as the output of describegraph of a Lightning Node
+#Param 2: parameter file: A parameter file formatted as the example in the data folder
 
 '''
         Function takes two imputs sample and params and processes them.
@@ -16,7 +19,7 @@ CHANNEL_KEYS = ["node1_pub", "node2_pub", "last_update", "capacity", "channel_id
         @parameters -- [json_file]
 '''
 def retrieve_program_input(args):
-    if(len(sys.argv)!=3):
+    if(len(sys.argv)!=NUM_PARAMS):
         print(" You must provide 2 parameters! ")
         print(" run_simulator.py <json_file> <parameter file>")
         sys.exit()
@@ -38,7 +41,7 @@ def retrieve_program_input(args):
     Params:
         @network -- [json_file] 
     Returns:
-        @nodes_df -- [pd.df] w/ attr: [pub_key last update]
+        @nodes_df -- [pd.df] w/ attr: [pub_key last_update]
         @channels_df -- [pd.df] w/ attr: [node1_pub node2_pub last_update capacity channel_id node1_policy node2_policy]
 '''
 def process_network_data(network):

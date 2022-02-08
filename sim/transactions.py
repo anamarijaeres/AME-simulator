@@ -6,7 +6,7 @@ import numpy as np
 from constants import NOT_STARTED
 import copy
 
-from sim.simulator import Simulator
+from simulator import Simulator
 
 
 class Transaction:

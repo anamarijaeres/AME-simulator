@@ -1534,3 +1534,59 @@ Final failure HTLC txs:5
 Inflight failure HTLC txs:6
 Collateral failure HTLC txs:0
 
+No_of_accomplishable_txs: 993
+Epoch size 300
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 987
+Failure done on purpose blitz txs:0
+Final failure blitz txs:2
+Inflight failure blitz txs:4
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 987
+Failure done on purpose HTLC txs:0
+Final failure HTLC txs:2
+Inflight failure HTLC txs:4
+Collateral failure HTLC txs:0
+
+No_of_accomplishable_txs: 987
+Epoch size 800
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 980
+Failure done on purpose blitz txs:0
+Final failure blitz txs:1
+Inflight failure blitz txs:6
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 980
+Failure done on purpose HTLC txs:0
+Final failure HTLC txs:1
+Inflight failure HTLC txs:6
+Collateral failure HTLC txs:0
+
+No_of_accomplishable_txs: 2958
+Epoch size 500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 2874
+Failure done on purpose blitz txs:0
+Final failure blitz txs:20
+Inflight failure blitz txs:64
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 2874
+Failure done on purpose HTLC txs:0
+Final failure HTLC txs:20
+Inflight failure HTLC txs:64
+Collateral failure HTLC txs:0
+
+No_of_accomplishable_txs: 2955
+Epoch size 1500
+Percentage of failed: 0.5
+Successfully reached receiver in Blitz: 2889
+Failure done on purpose blitz txs:0
+Final failure blitz txs:16
+Inflight failure blitz txs:50
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 2893
+Failure done on purpose HTLC txs:0
+Final failure HTLC txs:21
+Inflight failure HTLC txs:41
+Collateral failure HTLC txs:0
+

@@ -9,7 +9,7 @@ from constants import FAILED, SUCCESS, GO_IDLE, RELEASING, TX_ER_PUBLISHED, RELE
 
 import copy
 import random
-
+import array
 
 # from sim.transactions import Transaction
 
@@ -17,6 +17,8 @@ import random
 class Simulator():
     failed_Blitz = []
     failed_HTLC = []
+    array_rounds = []
+
 
     # stateSet = True --unnecessary
 
@@ -54,6 +56,45 @@ class Simulator():
                         break
                 if is_processable:
                     self.txs.append(tx)
+        # hits=0
+        # for tx in self.txs:
+        #     for tx2 in self.txs:
+        #         if tx.id != tx2.id:
+        #             for dchannel in tx.dchannels_path:
+        #                 for dchannel2 in tx2.dchannels_path:
+        #                     if dchannel.src.pk== dchannel2.src.pk and dchannel.trg.pk== dchannel2.trg.pk:
+        #                         hits+=1
+        #
+        # print("HITS")
+        # print(hits)
+
+        # for i in range(0, 500000):
+        #     self.array_rounds.append([0])
+        #
+        # print(Simulator.array_rounds[0])
+        # for tx in self.txs:
+        #     position = np.random.randint(0, 20)
+        #     if self.array_rounds[position][0]==0:
+        #         self.array_rounds[position][0]=tx
+        #     else:
+        #         self.array_rounds[position].append(tx)
+        #
+        # for ind,round in enumerate(self.array_rounds):
+        #     if round[0] != 0:
+        #         for it in range(len(round)):
+        #             tx=round[it]
+        #             if tx.status != FAILED and tx.status != SUCCESS and tx.failed_purposely == False:
+        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+        #                 self.round_counter += 1
+        #             # if the TX_ER_CHECKING is set process it right away
+        #             if tx.status == TX_ER_CHECKING:
+        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+        #
+        #             if tx.status == GO_IDLE:
+        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+        #                 if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
+        #                     self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+
 
         # Process all the txs that according to the topology could be processed
         while (True):
@@ -71,12 +112,18 @@ class Simulator():
                     done_counter += 1
 
             if all_done:
-                # simulator is done with all txs
                 print(done_counter)
                 break
 
-            # percentage_of_done= done_counter/ len(self.txs)
-            # if percentage_of_done>0.85:
+            if self.round_counter % 1000==0:
+                print(done_counter)
+                print(self.round_counter)
+
+
+            percentage_of_done= done_counter/ len(self.txs)
+            if percentage_of_done>0.9:
+                print(done_counter)
+                break
             #     for tx in type(self.protocol).successfully_reached_receiver_txs:
             #         if tx.status!= FAILED and tx.status!=SUCCESS:
             #             self.protocol.continue_tx(tx, self.round_counter, self.epoch_size )
@@ -88,7 +135,7 @@ class Simulator():
 
             # if Simulator.round_counter%self.epoch_size==0:
             #     self.go_to_next_epoch()
-            print(done_counter)
+            #print(done_counter)
             # if there is no more txs to process do the last epoch and release all locked channels------------------------
             # if (len(self.txs) - done_counter-len(Simulator.failed_HTLC)-len(Simulator.failed_Blitz)) == idle_counter:
             #     self.go_to_next_epoch()
@@ -120,8 +167,8 @@ class Simulator():
 
             if tx.status== GO_IDLE:
                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-                # if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
-                #     self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
 
 
 
@@ -129,11 +176,7 @@ class Simulator():
             #     # Tx finished or waiting the end of the epoch
             #     self.txs.pop(index)
 
-            # if len(self.txs) == 0:
-            #     if len(type(self.protocol).successfully_reached_receiver_txs) != 0:
-            #         self.go_to_next_epoch()
-            #     while len(Simulator.failed_HTLC) != 0 or len(Simulator.failed_Blitz)!=0:
-            #         self.process_failed_tx_form_the_last_epoch()
+
 
     '''
         After 1 epoch all the txs that reached the receiver are either all released in HTLC/Blitz case

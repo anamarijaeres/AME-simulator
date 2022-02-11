@@ -58,6 +58,7 @@ class HTLCProtocol(Protocol):
             if tx.premarked_as_failed == True:
                 tx.set_delays_htlc(round_counter,epoch_size)
                 tx.status = REVOKING
+                HTLCProtocol.all_failedTxs.append(tx.id)
             else:
                 tx.status = RELEASE_ALL
             return
@@ -128,7 +129,7 @@ class HTLCContract(Contract):
             ):
                 ind = len(HTLCProtocol.inflight_failure)
                 HTLCProtocol.inflight_failure.append(tx)
-                tx.inflight_failure_htlc = True
+                #tx.inflight_failure_htlc = True
 
                 # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data_htlc in self.dchannel.channel.data_htlc:
@@ -142,8 +143,8 @@ class HTLCContract(Contract):
                             print("HERE")
                             HTLCProtocol.inflight_failure.pop(ind)
                             HTLCProtocol.collateral_failure.append(tx)
-                            tx.inflight_failure_htlc = False
-                            tx.collateral_failure_htlc = True
+                            #tx.inflight_failure_htlc = False
+                            #tx.collateral_failure_htlc = True
                             break
             else:
                 HTLCProtocol.final_failure.append(tx)

@@ -68,52 +68,7 @@ if __name__ =="__main__":
     simulator.epoch_size=epoch_size
     simulator.percentage_of_failed=percentage_of_failed
     simulator.simulate_transactions(transactions_htlc)
-    # simulatorHtlc.epoch_size = epoch_size
-    # simulatorHtlc.percentage_of_failed = percentage_of_failed
-    #simulatorHtlc.simulate_transactions(transactions_htlc)
 
-
-
-    #print what have nodes along the path learned aboout a tx in Blitz
-    # failedBlitz=[]
-    # inflight_failure = []
-    # collateral_failure = []
-    #
-    # for t in transactions:
-
-        # print("Blitz \n"+ str(t.status)+ "  failed purposely:  " + str(t.failed_purposely))
-        # if t.status == FAILED  and t.inflight_failure_blitz==True:
-        #     print("Failed because of locked balance")
-        #     inflight_failure.append(t)
-        # elif t.status ==FAILED and t.collateral_failure_blitz==True:
-        #     print("Failed because of locked balance on Failed txs")
-        #     collateral_failure.append(t)
-        # elif t.status==FAILED:  failedBlitz.append(t)
-    #     for dchannel in t.dchannels_path:
-    #         for data in dchannel.channel.data:
-    #             if data[0]==t.id:
-    #                 print(data)
-    #
-    # failedHTLC = []
-    # failed_bcs_to_locked_balance_htlc = []
-    # failed_bcs_of_locked_balance_on_Failedtxs_htlc = []
-    #
-    #
-    # for t in transactions_htlc:
-    #     print("HTLC \n" + str(t.status)+ "  failed purposely:  "+ str(t.failed_purposely))
-    #     if t.status ==FAILED and t.inflight_failure_htlc==True:
-    #         print("Failed because of locked balance")
-    #         failed_bcs_to_locked_balance_htlc.append(t)
-    #     elif t.status ==FAILED and t.collateral_failure_htlc==True:
-    #         print("Failed because of locked balance on Failed txs")
-    #         failed_bcs_of_locked_balance_on_Failedtxs_htlc.append(t)
-    #     elif t.status==FAILED:
-    #             failedHTLC.append(t)
-    #     for dchannel in t.dchannels_path:
-    #         for data_htlc in dchannel.channel.data_htlc:
-    #             if data_htlc[0]==t.id:
-    #                 print(data_htlc)
-    #     print("\n\n")
 
     print("Successfully reached receiver in Blitz: " + str(BlitzProtocol.successfully_reached_receiver_counter))
 
@@ -124,7 +79,6 @@ if __name__ =="__main__":
     print("Inflight failure blitz txs:" + str(len(BlitzProtocol.inflight_failure)))
 
     print("Collateral failure blitz txs:" + str(len(BlitzProtocol.collateral_failure)))
-
 
     print("Successfully reached receiver in HTLC: " + str(HTLCProtocol.successfully_reached_receiver_counter))
 

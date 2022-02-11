@@ -115,6 +115,7 @@ class BlitzProtocol(Protocol):
             if tx.premarked_as_failed == True:
                 tx.set_delays_blitz(round_counter,epoch_size)
                 tx.status = TX_ER_PUBLISHED
+                BlitzProtocol.all_failedTxs.append(tx.id)
             else:
                 tx.status=RELEASE_ALL
             return
@@ -198,7 +199,7 @@ class BlitzContract(Contract):
             ):
                 ind = len(BlitzProtocol.inflight_failure)
                 BlitzProtocol.inflight_failure.append(tx)
-                tx.inflight_failure_blitz = True
+                #tx.inflight_failure_blitz = True
 
                 # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data in self.dchannel.channel.data:
@@ -212,8 +213,8 @@ class BlitzContract(Contract):
                             print("HERE")
                             BlitzProtocol.inflight_failure.pop(ind)
                             BlitzProtocol.collateral_failure.append(tx)
-                            tx.inflight_failure_blitz = False
-                            tx.collateral_failure_blitz = True
+                            #tx.inflight_failure_blitz = False
+                            #tx.collateral_failure_blitz = True
                             break
             else:
                 BlitzProtocol.final_failure.append(tx)

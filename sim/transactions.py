@@ -152,7 +152,7 @@ class Transaction:
     '''
     def set_delays_blitz(self,round_counter,epoch_size):
         for i in range(0,len(self.dchannels_path)):
-            self.delays_blitz.append(round_counter + epoch_size)
+            self.delays_blitz.append(round_counter)
 
 
 

@@ -1,0 +1,98 @@
+{
+    "nodes": [
+        {
+            "last_update": 1547380072,
+            "pub_key": "02f6725f9c1c40333b67faea92fd211c183050f28df32cac3f9d69685fe9665432",
+            "alias": "OutaSpace",
+            "addresses": [
+                {
+                    "network": "tcp",
+                    "addr": "46.163.78.93:9760"
+                },
+                {
+                    "network": "tcp",
+                    "addr": "[2a01:488:66:1000:2ea3:4e5d:0:1]:9760"
+                },
+                {
+                    "network": "tcp",
+                    "addr": "2dkobxxunnjatyph.onion:9760"
+                },
+                {
+                    "network": "tcp",
+                    "addr": "nzslu33ecbokyn32teza2peiiiuye43ftom7jvnuhsxdbg3vhw7w3aqd.onion:9760"
+                }
+            ],
+            "color": "#123456"
+        },
+        {
+            "last_update": 1548953899,
+            "pub_key": "032368258aad451e2c70c76d86b194001240f3a2cdff651e57ccbc473ade84a0a4",
+            "alias": "LivingRoomOfSatoshi.com_LND_2",
+            "addresses": [
+                {
+                    "network": "tcp",
+                    "addr": "172.81.178.151:9735"
+                }
+            ],
+            "color": "#3399ff"
+        },
+        {
+            "last_update": 1548838032,
+            "pub_key": "024bd94f0425590434538fd21d4e58982f7e9cfd8f339205a73deb9c0e0341f5bd",
+            "alias": "Jamie Dimon",
+            "addresses": [
+                {
+                    "network": "tcp",
+                    "addr": "87.17.55.242:9735"
+                }
+            ],
+            "color": "#4286f4"
+        }
+    ],
+    "edges": [
+        {
+            "channel_id": "557504072480260097",
+            "chan_point": "066363dcd11c9f5268fee778aed72f290bef3bfa2a32d77611fbd4a3ec7f0ef3:1",
+            "last_update": 1548516676,
+            "node1_pub": "02f6725f9c1c40333b67faea92fd211c183050f28df32cac3f9d69685fe9665432",
+            "node2_pub": "032368258aad451e2c70c76d86b194001240f3a2cdff651e57ccbc473ade84a0a4",
+            "capacity": "230000",
+            "node1_policy": {
+                "time_lock_delta": 144,
+                "min_htlc": "0",
+                "fee_base_msat": "1000",
+                "fee_rate_milli_msat": "10",
+                "disabled": false
+            },
+            "node2_policy": {
+                "time_lock_delta": 144,
+                "min_htlc": "0",
+                "fee_base_msat": "1000",
+                "fee_rate_milli_msat": "10",
+                "disabled": false
+            }
+        },
+        {
+            "channel_id": "563755895464329216",
+            "chan_point": "5943db82ff0bf9b7089ec397001e6ca0af52347213b7771771f06bc9e215fd16:0",
+            "last_update": 1548398543,
+            "node1_pub": "024bd94f0425590434538fd21d4e58982f7e9cfd8f339205a73deb9c0e0341f5bd",
+            "node2_pub": "02eae56f155bae8a8eaab82ddc6fef04d5a79a6b0b0d7bcdd0b60d52f3015af031",
+            "capacity": "1234",
+            "node1_policy": {
+                "time_lock_delta": 144,
+                "min_htlc": "0",
+                "fee_base_msat": "1000",
+                "fee_rate_milli_msat": "10",
+                "disabled": false
+            },
+            "node2_policy": {
+                "time_lock_delta": 144,
+                "min_htlc": "0",
+                "fee_base_msat": "1000",
+                "fee_rate_milli_msat": "10",
+                "disabled": false
+            }
+        }
+    ]
+}

@@ -2,8 +2,9 @@ import copy
 import random
 import sys
 from os import replace
-
+import unittest
 import numpy as np
+import pandas as pd
 
 from blitz_protocol import BlitzProtocol, BlitzContract
 from constants import FAILED
@@ -52,7 +53,6 @@ if __name__ == "__main__":
     percentages = [0.1, 0.2, 0.3]
 
     for percentage in percentages:
-
         for amount in amounts:
             Transaction.tx_counter = 0
             # build the network topology - prepare the channels (make directed edges-->prepare them-->make channels)

@@ -5,11 +5,13 @@ import numpy as np
 # from blitz_protocol import BlitzProtocol
 # from htlc_protocol import HTLCProtocol
 # from run_simulator import get_random_element
-from constants import FAILED, SUCCESS, GO_IDLE, RELEASING, TX_ER_PUBLISHED, RELEASE_ALL, REVOKING, TX_ER_CHECKING
+from constants import FAILED, SUCCESS, GO_IDLE, RELEASING, TX_ER_PUBLISHED, RELEASE_ALL, REVOKING, TX_ER_CHECKING, \
+    REVOKE_ALL
 
 import copy
 import random
 import array
+
 
 # from sim.transactions import Transaction
 
@@ -19,15 +21,13 @@ class Simulator():
     failed_HTLC = []
     array_rounds = []
 
-
     # stateSet = True --unnecessary
 
-    def __init__(self, protocol, epoch_size, percetange_of_failed):
+    def __init__(self, protocol, epoch_size):
         self.protocol = protocol
         self.epoch_size = epoch_size
         self.round_counter = 0
-        # self.percentage_of_failed = percetange_of_failed
-        # self.state = random.getstate()
+
 
     '''
         Preforms the simulation of a payment for specific transactions
@@ -67,116 +67,124 @@ class Simulator():
         #
         # print("HITS")
         # print(hits)
-
-        # for i in range(0, 500000):
-        #     self.array_rounds.append([0])
-        #
-        # print(Simulator.array_rounds[0])
-        # for tx in self.txs:
-        #     position = np.random.randint(0, 20)
-        #     if self.array_rounds[position][0]==0:
-        #         self.array_rounds[position][0]=tx
-        #     else:
-        #         self.array_rounds[position].append(tx)
-        #
-        # for ind,round in enumerate(self.array_rounds):
-        #     if round[0] != 0:
-        #         for it in range(len(round)):
-        #             tx=round[it]
-        #             if tx.status != FAILED and tx.status != SUCCESS and tx.failed_purposely == False:
-        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-        #                 self.round_counter += 1
-        #             # if the TX_ER_CHECKING is set process it right away
-        #             if tx.status == TX_ER_CHECKING:
-        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-        #
-        #             if tx.status == GO_IDLE:
-        #                 self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-        #                 if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
-        #                     self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+        self.array_rounds=[]
+        for i in range(0, 1000000):
+            self.array_rounds.append([])
 
 
-        # Process all the txs that according to the topology could be processed
-        while (True):
+        for tx in self.txs:
+            position = np.random.randint(0, 5000)
+            self.array_rounds[position].append(tx)
 
-            # check if all txs are processed until the end
-            all_done = True
-            done_counter = 0
-            idle_counter = 0
-            for tx in self.txs:
-                if tx.status != SUCCESS and tx.status != FAILED:
-                    if tx.status == GO_IDLE:
-                        idle_counter += 1
-                    all_done = False
-                else:
-                    done_counter += 1
+        for i, round in enumerate(self.array_rounds):
+            for j in range(len(round)):
+                tx = round[j]
+                # process next tx in the row
+                if tx.status != FAILED and tx.status != SUCCESS:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                    self.round_counter += 1
 
-            if all_done:
-                print(done_counter)
-                break
-
-            if self.round_counter % 1000==0:
-                print(done_counter)
-                print(self.round_counter)
-
-
-            percentage_of_done= done_counter/ len(self.txs)
-            if percentage_of_done>0.9:
-                print(done_counter)
-                break
-            #     for tx in type(self.protocol).successfully_reached_receiver_txs:
-            #         if tx.status!= FAILED and tx.status!=SUCCESS:
-            #             self.protocol.continue_tx(tx, self.round_counter, self.epoch_size )
-
-            # check if it is time for the next epoch
-            # if len(type(self.protocol).successfully_reached_receiver_txs) == self.epoch_size:
-            #     # next epoch
-            #     self.go_to_next_epoch()
-
-            # if Simulator.round_counter%self.epoch_size==0:
-            #     self.go_to_next_epoch()
-            #print(done_counter)
-            # if there is no more txs to process do the last epoch and release all locked channels------------------------
-            # if (len(self.txs) - done_counter-len(Simulator.failed_HTLC)-len(Simulator.failed_Blitz)) == idle_counter:
-            #     self.go_to_next_epoch()
-            #     while len(Simulator.failed_HTLC) != 0 or len(Simulator.failed_Blitz) != 0:
-            #         self.process_failed_tx_form_the_last_epoch()
-
-            # ------------------------------------------------------------------------------------------------------------
-
-            # Pick a random tx
-            r = np.random.randint(0, len(self.txs))
-            tx = self.txs[r]
-
-            # tx, index = self.get_random_element(self.txs)
-
-            # if(Simulator.counter_of_operations==1000):
-            #     Simulator.counter_of_operations=0
-            #     self.go_to_next_epoch()
-            #
-            # Simulator.counter_of_operations+=1
-            # Perform one execution step of the tx
-
-            if tx.status != FAILED and tx.status != SUCCESS and tx.failed_purposely == False:
-                self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-                self.round_counter += 1
-
-            # if the TX_ER_CHECKING is set process it right away
-            if tx.status == TX_ER_CHECKING:
-                self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-
-            if tx.status== GO_IDLE:
-                self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
-                if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
+                if tx.status == REVOKE_ALL:
                     self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
 
+                # if the TX_ER_CHECKING is set process it right away
+                if tx.status == TX_ER_CHECKING:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
 
+                if tx.status == GO_IDLE:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                    # release all channels immediately in this round
+                    if tx.status == RELEASE_ALL or tx.status == TX_ER_PUBLISHED:
+                        self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                    # put tx further away and then revoke all channels
+                    # if tx.status == TX_ER_PUBLISHED:
+                    #     self.array_rounds[i + self.delay_param].append(tx)
+                    # distribute tx over delay_in_operations in an array
+                    if tx.status == REVOKING:
+                        for step in range(len(tx.dchannels_path)):
+                            self.array_rounds[int(i + self.epoch_size * (step + 1))].append(tx)
 
-            # if tx.status == FAILED or tx.status == SUCCESS or tx.status == GO_IDLE:
-            #     # Tx finished or waiting the end of the epoch
-            #     self.txs.pop(index)
+                if tx.status != FAILED and tx.status != SUCCESS and tx.status != REVOKING and tx.status != TX_ER_PUBLISHED:
+                    self.array_rounds[i + 1].append(tx)
 
+        old = False
+        if (old):
+            # Process all the txs that according to the topology could be processed
+            while (True):
 
+                # check if all txs are processed until the end
+                all_done = True
+                done_counter = 0
+                idle_counter = 0
+                for tx in self.txs:
+                    if tx.status != SUCCESS and tx.status != FAILED:
+                        if tx.status == GO_IDLE:
+                            idle_counter += 1
+                        all_done = False
+                    else:
+                        done_counter += 1
+
+                if all_done:
+                    print(done_counter)
+                    break
+
+                if self.round_counter % 1000 == 0:
+                    print(done_counter)
+                    print(self.round_counter)
+
+                percentage_of_done = done_counter / len(self.txs)
+                if percentage_of_done > 0.9:
+                    print(done_counter)
+                    break
+                #     for tx in type(self.protocol).successfully_reached_receiver_txs:
+                #         if tx.status!= FAILED and tx.status!=SUCCESS:
+                #             self.protocol.continue_tx(tx, self.round_counter, self.delay_param )
+
+                # check if it is time for the next epoch
+                # if len(type(self.protocol).successfully_reached_receiver_txs) == self.delay_param:
+                #     # next epoch
+                #     self.go_to_next_epoch()
+
+                # if Simulator.round_counter%self.delay_param==0:
+                #     self.go_to_next_epoch()
+                # print(done_counter)
+                # if there is no more txs to process do the last epoch and release all locked channels------------------------
+                # if (len(self.txs) - done_counter-len(Simulator.failed_HTLC)-len(Simulator.failed_Blitz)) == idle_counter:
+                #     self.go_to_next_epoch()
+                #     while len(Simulator.failed_HTLC) != 0 or len(Simulator.failed_Blitz) != 0:
+                #         self.process_failed_tx_form_the_last_epoch()
+
+                # ------------------------------------------------------------------------------------------------------------
+
+                # Pick a random tx
+                r = np.random.randint(0, len(self.txs))
+                tx = self.txs[r]
+
+                # tx, index = self.get_random_element(self.txs)
+
+                # if(Simulator.counter_of_operations==1000):
+                #     Simulator.counter_of_operations=0
+                #     self.go_to_next_epoch()
+                #
+                # Simulator.counter_of_operations+=1
+                # Perform one execution step of the tx
+
+                if tx.status != FAILED and tx.status != SUCCESS and tx.failed_purposely == False:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                    self.round_counter += 1
+
+                # if the TX_ER_CHECKING is set process it right away
+                if tx.status == TX_ER_CHECKING:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+
+                if tx.status == GO_IDLE:
+                    self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+                    if tx.status == TX_ER_PUBLISHED or tx.status == RELEASE_ALL or tx.status == REVOKING:
+                        self.protocol.continue_tx(tx, self.round_counter, self.epoch_size)
+
+                # if tx.status == FAILED or tx.status == SUCCESS or tx.status == GO_IDLE:
+                #     # Tx finished or waiting the end of the epoch
+                #     self.txs.pop(index)
 
     '''
         After 1 epoch all the txs that reached the receiver are either all released in HTLC/Blitz case

@@ -172,7 +172,8 @@ class NetworkTopology:
         directed_aggr_edges["total_fee"] = calculate_tx_fee(directed_aggr_edges, amount)
 
         # generate random risk factor
-        directed_aggr_edges["risk_factor"] = random.choices([1, 10, 100, 1000], k=directed_aggr_edges.shape[0]) #im not using this so it can stay
+        directed_aggr_edges["risk_factor"] = random.choices([1, 10, 100, 1000], k=directed_aggr_edges.shape[
+            0])  # im not using this so it can stay
 
         # calculate routing weight
         directed_aggr_edges["routing_weight"] = calculate_routing_weight(directed_aggr_edges, amount)
@@ -224,10 +225,43 @@ class NetworkTopology:
         self.digraph = g
         return self.digraph
 
+
+
+    def find_skeleton(self):
+        digraph= self.get_graph()
+        nodes=list(digraph.nodes())
+        included_channels = list(self.channels_map.values())
+        iterate=True
+        while(iterate):
+            iterate=False
+            for node in nodes:
+                deg=digraph.degree(node)
+                if deg==2:
+                    nodes.remove(node)
+                    iterate=True
+                    for channel in included_channels:
+                        if node == channel.node1.pk or node == channel.node2.pk:
+                            included_channels.remove(channel)
+        return nodes,included_channels
+
+    def calculate_micropayment_amount(self, core_nodes,core_channels):
+        min=10000000
+        for channel in core_channels:
+            if channel.capacity < min:
+                min=channel.capacity
+        return min
+
+    def calculate_concrete_amount(self):
+        min = 10000000
+
+        for channel in  list(self.channels_map.values()):
+            if channel.capacity < min:
+                 min = channel.capacity
+        return min*10
+
     '''
         Function gets the directed channel which goes from node pk1 to pk2
     '''
-
     def get_directed_channel(self, pk1, pk2):
         if (pk1, pk2) in self.channels_map:
             return self.channels_map[(pk1, pk2)].directed_channels[pk1]
@@ -291,7 +325,7 @@ class Channel:
         self.directed_channels[node2.pk] = DirectedChannel(node2, node1, from_node2_to_node1, self)
         # holds the information of all the payment events that pass through this channel
         self.data = []
-        self.data_htlc=[]
+        self.data_htlc = []
 
         self.id = hash(hash(self.node1) + hash(self.node2) + hash(self.capacity) + hash(self.last_update))
 
@@ -363,17 +397,20 @@ class DirectedChannel:
     '''
         Gets total_fee as a  weight for the creation of digraph
     '''
+
     def get_total_fee(self):
         return self.total_fee
 
     '''
         Gets dchannel in the other direction 
     '''
+
     def get_brother_channel(self):
         return self.channel.directed_channels[self.trg.pk]
 
     '''
         Calculates a fee this node for the given amount
     '''
+
     def calculate_fee(self, amount):
         return (self.fee_base_msat / 1000.0) + amount * self.fee_rate_milli_msat / 10.0 ** 6

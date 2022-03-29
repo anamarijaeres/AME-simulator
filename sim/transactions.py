@@ -33,14 +33,15 @@ class Transaction:
         self.premarked_as_failed=False
 
 
-        self.failed_purposely = False
+        #self.failed_purposely = False
+        self.final_failure_blitz=False
         self.inflight_failure_blitz = False
         self.collateral_failure_blitz = False
+        self.final_failure_htlc=False
         self.inflight_failure_htlc = False
         self.collateral_failure_htlc = False
 
-        self.delays_htlc=[]
-        self.delays_blitz=[]
+
 
     '''
         Gets the next channel for processing the tx
@@ -141,7 +142,7 @@ class Transaction:
             contract.release()
         return True
     '''
-        Delays are set in a way that first delay is a delay for the last channel on the path
+        Delays are set in a way that first delay_in_operations is a delay_in_operations for the last channel on the path
     '''
     def set_delays_htlc(self,round_counter,epoch_size):
         for i in range(0, len(self.dchannels_path)):
@@ -176,17 +177,18 @@ class TransactionGenerator:
     '''
 
     def generate(self, number_txs, payment_amount, one_amount_for_all_txs):
-        sources = random.choices(list(self.networkBlitz.nodes_map.values()), k=number_txs)
+        np.random.seed(0)
+        sources = np.random.choice(list(self.networkBlitz.nodes_map.values()), size=number_txs)
 
         txsBlitz = []
         txsHTLC = []
 
         for src in sources:
             srcHtlc = self.networkHtlc.nodes_map.get(src.pk)
-            trg = random.sample(list(self.networkBlitz.nodes_map.values()), 1)[0]
+            trg = np.random.choice(list(self.networkBlitz.nodes_map.values()), size=1)[0]
             trgHtlc = self.networkHtlc.nodes_map.get(trg.pk)
             while trg == src:
-                trg = random.sample(list(self.networkBlitz.nodes_map.values()), 1)[0]
+                trg = np.random.choice(list(self.networkBlitz.nodes_map.values()), size=1)[0]
                 trgHtlc = self.networkHtlc.nodes_map.get(trg.pk)
             txsBlitz.append((src, trg))
             txsHTLC.append((srcHtlc, trgHtlc))
@@ -216,12 +218,33 @@ class TransactionGenerator:
          @transactions -- [Transaction] array of txs in Blitz topology
          @transactions_htlc -- [Transaction] array of txs in HTLC topology 
     '''
-    def mark_failed_txs(self,transactions, transactions_htlc,pecentage_of_failed):
+    def mark_failed_txs(self,transactions, transactions_htlc,percentage_of_failed):
         index_list=list(range(0,len(transactions)))
-        failed_indxs = random.choices(index_list, k=int(len(index_list)*pecentage_of_failed))
+        # if percentage_of_failed != 0.1:
+        #     new_index_list = []
+        #     counter_of_premarked_as_failed=0
+        #     for tx in transactions:
+        #         if tx.premarked_as_failed==False:
+        #             new_index_list.append(tx.id)
+        #         else:
+        #             counter_of_premarked_as_failed+=1
+        #     number_of_failed_in_this_round=len(transactions)*percentage_of_failed
+        #     number_without_previous_round=number_of_failed_in_this_round-counter_of_premarked_as_failed
+        #     perc=number_without_previous_round/len(new_index_list)
+        #     failed_indxs = random.sample(new_index_list,int(len(new_index_list)*perc))
+        # else:
 
-        for i in  failed_indxs:
+        failed_indxs = np.random.choice(index_list, replace=False, size=int(len(index_list)*percentage_of_failed))
+
+        for i in failed_indxs:
             transactions[i].premarked_as_failed=True
             transactions_htlc[i].premarked_as_failed=True
+
+        calc_premarked=0
+        for tx in transactions:
+            if tx.premarked_as_failed==True:
+                calc_premarked+=1
+
+        print(calc_premarked)
 
         return transactions,transactions_htlc

@@ -1,0 +1,29 @@
+No_of_accomplishable_txs: 205
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 205
+Successfull txs:195
+Final failure blitz txs:0
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 205
+Successfull txs:195
+Final failure HTLC txs:0
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:0
+
+No of final to final:0
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:0
+ 
+

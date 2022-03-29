@@ -3,7 +3,7 @@ from utils import create_hash, create_preimage, get_random_string, generate_keys
 from protocol import Protocol, Contract
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
     REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL, \
-    FINISHED_FORWARDING
+    FINISHED_FORWARDING, REVOKE_ALL
 
 TIMELOCK = 10000
 TIMELOCK_DELTA = 100
@@ -52,11 +52,12 @@ class HTLCProtocol(Protocol):
                 prev_contract = tx.pending_contracts[0]
                 new_contract = self.create_next_contract(prev_contract, dchannel)
                 if not self.forward_contract(tx, new_contract):
-                    tx.status = REVOKING
+                    #tx.status = REVOKING
+                    tx.status = REVOKE_ALL
 
         elif status == GO_IDLE:
             if tx.premarked_as_failed == True:
-                tx.set_delays_htlc(round_counter,epoch_size)
+                #tx.set_delays_htlc(round_counter,delay_param)
                 tx.status = REVOKING
                 HTLCProtocol.all_failedTxs.append(tx.id)
             else:
@@ -71,6 +72,13 @@ class HTLCProtocol(Protocol):
             else:
                 print("RELEASE_ALL ERROR")
 
+        elif status==REVOKE_ALL:
+            if tx.instantly_revoke():
+                # print("Everybody revoked")
+                tx.status = FAILED
+            else:
+                print("Error while doing the instant revoke.")
+
         elif status == RELEASING:
             contract = tx.get_last_pending_contract()
             if contract is not None:
@@ -80,9 +88,9 @@ class HTLCProtocol(Protocol):
                 tx.status = SUCCESS
 
         elif status == REVOKING:
-            if tx.curr_contract_index < len(tx.delays_htlc):
-                if tx.delays_htlc[tx.curr_contract_index] > round_counter:
-                    return
+            # if tx.curr_contract_index < len(tx.delays_htlc):
+            #     if tx.delays_htlc[tx.curr_contract_index] > round_counter:
+            #         return
             contract = tx.get_last_pending_contract()
             if contract is not None:
                 contract.revoke()
@@ -122,6 +130,7 @@ class HTLCContract(Contract):
                 self.dchannel.min_htlc > self.payment_amount  # the payment amount is below the minimum
                 # self.timelock < 0   # the timelock is not enough -- i dont think the timelock should be considered in this case
         ):
+            tx.final_failure_htlc=True
             # this checks if the failure happend due to the purposely failed transactions which locked coins
             if (
                     self.dchannel.locked_balance + self.dchannel.balance >= self.payment_amount > self.dchannel.min_htlc
@@ -129,7 +138,8 @@ class HTLCContract(Contract):
             ):
                 ind = len(HTLCProtocol.inflight_failure)
                 HTLCProtocol.inflight_failure.append(tx)
-                #tx.inflight_failure_htlc = True
+                tx.final_failure_htlc=False
+                tx.inflight_failure_htlc = True
 
                 # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data_htlc in self.dchannel.channel.data_htlc:
@@ -143,8 +153,8 @@ class HTLCContract(Contract):
                             print("HERE")
                             HTLCProtocol.inflight_failure.pop(ind)
                             HTLCProtocol.collateral_failure.append(tx)
-                            #tx.inflight_failure_htlc = False
-                            #tx.collateral_failure_htlc = True
+                            tx.inflight_failure_htlc = False
+                            tx.collateral_failure_htlc = True
                             break
             else:
                 HTLCProtocol.final_failure.append(tx)

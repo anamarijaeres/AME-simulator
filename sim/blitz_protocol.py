@@ -4,7 +4,7 @@ from protocol import Protocol, Contract
 
 from utils import generate_keys_for_nodes, simulate_state_agreement, generate_tx_er, create_hash, make_hash
 from constants import FAILED, SUCCESS, SETUP_DONE, REVOKING, RELEASING, FORWARDING, NOT_STARTED, LOCKED, RELEASED, \
-    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL
+    REVOKED, TX_ER_CHECKING, TX_ER_PUBLISHED, INSTANT_REVOKING, GO_IDLE, FORCING_REVOKE, RELEASE_ALL, REVOKE_ALL
 
 # this should be changed accordingly
 TIMELOCK = 10000
@@ -77,7 +77,8 @@ class BlitzProtocol(Protocol):
                 prev_contract = tx.pending_contracts[0]
                 new_contract = self.create_next_contract(prev_contract, dchannel)
                 if not self.forward_contract(tx, new_contract):
-                    tx.status = REVOKING
+                    #tx.status = REVOKING
+                    tx.status=REVOKE_ALL
 
         elif status == TX_ER_CHECKING:
             contractWithSender = tx.get_first_pending_contract()  # FIFO -- first in first out
@@ -110,10 +111,10 @@ class BlitzProtocol(Protocol):
             else:
                 tx.status = SUCCESS
 
-        #here  i have to set delay for all channels
+        #here  i have to set delay_in_operations for all channels
         elif status == GO_IDLE:
             if tx.premarked_as_failed == True:
-                tx.set_delays_blitz(round_counter,epoch_size)
+                #tx.set_delays_blitz(round_counter,delay_param)
                 tx.status = TX_ER_PUBLISHED
                 BlitzProtocol.all_failedTxs.append(tx.id)
             else:
@@ -127,10 +128,17 @@ class BlitzProtocol(Protocol):
             else:
                 print("RELEASE_ALL ERROR")
 
+        elif status==REVOKE_ALL:
+            if tx.instantly_revoke():
+                # print("Everybody revoked")
+                tx.status = FAILED
+            else:
+                print("Error while doing the instant revoke.")
+
         elif status == TX_ER_PUBLISHED:  # should this be separated from instant_revoking or is that an atomic action
-            for delay in tx.delays_blitz:
-                if delay > round_counter:
-                    return
+            # for delay_in_operations in tx.delays_blitz:
+            #     if delay_in_operations > round_counter:
+            #         return
             if tx.publish_tx_er():
                 #print("Tx_er published")
                 if tx.instantly_revoke():
@@ -192,6 +200,7 @@ class BlitzContract(Contract):
                 self.dchannel.min_htlc > self.payment_amount  # the payment amount is below the minimum
                 #  self.timelock < 0  # i wouldn't put this in blitz just yet
         ):
+            tx.final_failure_blitz=True
             # this checks if the failure happened due to the locked coins in the channel or due to purposely failed
             # transactions which locked coins in the channel
             if (
@@ -199,7 +208,8 @@ class BlitzContract(Contract):
             ):
                 ind = len(BlitzProtocol.inflight_failure)
                 BlitzProtocol.inflight_failure.append(tx)
-                #tx.inflight_failure_blitz = True
+                tx.final_failure_blitz=False
+                tx.inflight_failure_blitz = True
 
                 # data is an array:[id, src , trg , status, payment amount, tx_er, tx_er_hash]
                 for data in self.dchannel.channel.data:
@@ -213,8 +223,8 @@ class BlitzContract(Contract):
                             print("HERE")
                             BlitzProtocol.inflight_failure.pop(ind)
                             BlitzProtocol.collateral_failure.append(tx)
-                            #tx.inflight_failure_blitz = False
-                            #tx.collateral_failure_blitz = True
+                            tx.inflight_failure_blitz = False
+                            tx.collateral_failure_blitz = True
                             break
             else:
                 BlitzProtocol.final_failure.append(tx)

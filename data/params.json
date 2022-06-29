@@ -1,6 +1,6 @@
 {
     "payment_amount": "1100",
-    "number_of_transactions": "10000",
+    "number_of_transactions": "20000",
     "capacity_assignment":"default",
     "max_htlc":"1000",
     "protocol":"Blitz",

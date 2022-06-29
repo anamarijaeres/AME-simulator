@@ -1,0 +1,227 @@
+
+
+No_of_accomplishable_txs: 8821
+Percentage of failed: 0.1
+Final failure blitz txs:293
+Final failure HTLC txs:275
+Collateral failure HTLC txs:61
+
+No of success to collateral:35
+ 
+
+No_of_accomplishable_txs: 8821
+Percentage of failed: 0.2
+Final failure blitz txs:271
+Final failure HTLC txs:241
+Collateral failure HTLC txs:135
+
+No of success to collateral:77
+ 
+
+No_of_accomplishable_txs: 8821
+Percentage of failed: 0.3
+Final failure blitz txs:271
+Final failure HTLC txs:225
+Collateral failure HTLC txs:209
+
+No of success to collateral:108
+ 
+
+No_of_accomplishable_txs: 8835
+Percentage of failed: 0.1
+Final failure blitz txs:307
+Final failure HTLC txs:290
+Collateral failure HTLC txs:53
+
+No of success to collateral:33
+ 
+
+No_of_accomplishable_txs: 8835
+Percentage of failed: 0.2
+Final failure blitz txs:298
+Final failure HTLC txs:274
+Collateral failure HTLC txs:105
+
+No of success to collateral:53
+ 
+
+No_of_accomplishable_txs: 8835
+Percentage of failed: 0.3
+Final failure blitz txs:283
+Final failure HTLC txs:239
+Collateral failure HTLC txs:183
+
+No of success to collateral:82
+ 
+
+No_of_accomplishable_txs: 8904
+Percentage of failed: 0.1
+Final failure blitz txs:320
+Final failure HTLC txs:303
+Collateral failure HTLC txs:75
+
+No of success to collateral:46
+ 
+
+No_of_accomplishable_txs: 8904
+Percentage of failed: 0.2
+Final failure blitz txs:305
+Final failure HTLC txs:276
+Collateral failure HTLC txs:133
+
+No of success to collateral:70
+ 
+
+No_of_accomplishable_txs: 8904
+Percentage of failed: 0.3
+Final failure blitz txs:282
+Final failure HTLC txs:235
+Collateral failure HTLC txs:231
+
+No of success to collateral:121
+ 
+
+No_of_accomplishable_txs: 8816
+Percentage of failed: 0.1
+Final failure blitz txs:292
+Final failure HTLC txs:270
+Collateral failure HTLC txs:86
+
+No of success to collateral:50
+ 
+
+No_of_accomplishable_txs: 8816
+Percentage of failed: 0.2
+Final failure blitz txs:292
+Final failure HTLC txs:248
+Collateral failure HTLC txs:135
+
+No of success to collateral:70
+ 
+
+No_of_accomplishable_txs: 8816
+Percentage of failed: 0.3
+Final failure blitz txs:272
+Final failure HTLC txs:225
+Collateral failure HTLC txs:203
+
+No of success to collateral:110
+ 
+
+No_of_accomplishable_txs: 8832
+Percentage of failed: 0.1
+Final failure blitz txs:321
+Final failure HTLC txs:287
+Collateral failure HTLC txs:112
+
+No of success to collateral:66
+ 
+
+No_of_accomplishable_txs: 8832
+Percentage of failed: 0.2
+Final failure blitz txs:319
+Final failure HTLC txs:274
+Collateral failure HTLC txs:207
+
+No of success to collateral:125
+ 
+
+No_of_accomplishable_txs: 8832
+Percentage of failed: 0.3
+Final failure blitz txs:291
+Final failure HTLC txs:235
+Collateral failure HTLC txs:337
+
+No of success to collateral:190
+ 
+
+No_of_accomplishable_txs: 17668
+Percentage of failed: 0.1
+Final failure blitz txs:869
+Final failure HTLC txs:750
+Collateral failure HTLC txs:348
+
+No of success to collateral:180
+ 
+
+No_of_accomplishable_txs: 17668
+Percentage of failed: 0.2
+Final failure blitz txs:791
+Final failure HTLC txs:590
+Collateral failure HTLC txs:730
+
+No of success to collateral:393
+ 
+
+No_of_accomplishable_txs: 17668
+Percentage of failed: 0.3
+Final failure blitz txs:720
+Final failure HTLC txs:498
+Collateral failure HTLC txs:1038
+
+No of success to collateral:534
+ 
+
+No_of_accomplishable_txs: 17550
+Percentage of failed: 0.1
+Final failure blitz txs:864
+Final failure HTLC txs:722
+Collateral failure HTLC txs:371
+
+No of success to collateral:187
+ 
+
+No_of_accomplishable_txs: 17577
+Percentage of failed: 0.1
+Final failure blitz txs:889
+Final failure HTLC txs:737
+Collateral failure HTLC txs:370
+
+No of success to collateral:172
+ 
+
+No_of_accomplishable_txs: 17577
+Percentage of failed: 0.2
+Final failure blitz txs:854
+Final failure HTLC txs:625
+Collateral failure HTLC txs:680
+
+No of success to collateral:333
+ 
+
+No_of_accomplishable_txs: 17577
+Percentage of failed: 0.3
+Final failure blitz txs:786
+Final failure HTLC txs:515
+Collateral failure HTLC txs:1019
+
+No of success to collateral:499
+ 
+
+No_of_accomplishable_txs: 17634
+Percentage of failed: 0.1
+Final failure blitz txs:943
+Final failure HTLC txs:814
+Collateral failure HTLC txs:320
+
+No of success to collateral:167
+ 
+
+No_of_accomplishable_txs: 17634
+Percentage of failed: 0.2
+Final failure blitz txs:837
+Final failure HTLC txs:621
+Collateral failure HTLC txs:748
+
+No of success to collateral:401
+ 
+
+No_of_accomplishable_txs: 17634
+Percentage of failed: 0.3
+Final failure blitz txs:799
+Final failure HTLC txs:505
+Collateral failure HTLC txs:1069
+
+No of success to collateral:514
+ 
+

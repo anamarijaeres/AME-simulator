@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     # time to publish 1 block is 10 minutes == 600s
     block = 600
-    delay_in_operations = block / operation_time
+    delay_in_operations = 144* block / operation_time
 
     # retrieve arguments "sample.json" & "params.json"
     network_data, params = retrieve_program_input(sys.argv)
@@ -53,7 +53,9 @@ if __name__ == "__main__":
     percentages = [0.1, 0.2, 0.3]
 
     for percentage in percentages:
-        for amount in amounts:
+
+        for ind1,amount in enumerate(amounts):
+
             Transaction.tx_counter = 0
             # build the network topology - prepare the channels (make directed edges-->prepare them-->make channels)
             networkBlitz = NetworkTopology(nodes_df, network_df, amount,
@@ -107,6 +109,7 @@ if __name__ == "__main__":
             succesfull_txs_htlc = 0
 
             for ind, tx in enumerate(transactions):
+
                 if tx.final_failure_blitz and transactions_htlc[ind].final_failure_htlc:
                     final_in_final.append(transactions_htlc[ind])
                 elif tx.final_failure_blitz and transactions_htlc[ind].inflight_failure_htlc:
@@ -155,6 +158,24 @@ if __name__ == "__main__":
             print("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure)))
 
             file = open("new.txt", "a")  # append mode
+            microfile=open("micropayments.txt","a")
+            concfile=open("concretepayments.txt","a")
+            if ind1==0:
+                # print(ind1)
+                microfile.write("No_of_accomplishable_txs: " + str(len(simulator.txs)) + "\n")
+                microfile.write("Percentage of failed: " + str(percentage) + "\n")
+                microfile.write("Final failure blitz txs:" + str(len(BlitzProtocol.final_failure)) + "\n")
+                microfile.write("Final failure HTLC txs:" + str(len(HTLCProtocol.final_failure)) + "\n")
+                microfile.write("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure)) + "\n\n")
+                microfile.write("No of success to collateral:" + str(len(success_in_collateral)) + "\n \n\n")
+            else:
+                concfile.write("No_of_accomplishable_txs: " + str(len(simulator.txs)) + "\n")
+                concfile.write("Percentage of failed: " + str(percentage) + "\n")
+                concfile.write("Final failure blitz txs:" + str(len(BlitzProtocol.final_failure)) + "\n")
+                concfile.write("Final failure HTLC txs:" + str(len(HTLCProtocol.final_failure)) + "\n")
+                concfile.write("Collateral failure HTLC txs:" + str(len(HTLCProtocol.collateral_failure)) + "\n\n")
+                concfile.write("No of success to collateral:" + str(len(success_in_collateral)) + "\n \n\n")
+
             file.write("No_of_accomplishable_txs: " + str(len(simulator.txs)) + "\n")
             file.write("Delay: " + str(delay_in_operations) + "\n")
             file.write("Percentage of failed: " + str(percentage) + "\n")

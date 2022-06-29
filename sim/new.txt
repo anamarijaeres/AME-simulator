@@ -27,3 +27,2787 @@ No of success to inflight:0
 No of success to collateral:0
  
 
+No_of_accomplishable_txs: 9907
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9894
+Successfull txs:8903
+Final failure blitz txs:13
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9893
+Successfull txs:8902
+Final failure HTLC txs:12
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:12
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:1
+ 
+
+No_of_accomplishable_txs: 8831
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8525
+Successfull txs:7683
+Final failure blitz txs:304
+Inflight failure blitz txs:2
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8472
+Successfull txs:7638
+Final failure HTLC txs:282
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:76
+
+No of final to final:280
+No of final to inflight:0
+No of final to collateral:23
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:43
+ 
+
+No_of_accomplishable_txs: 9907
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9896
+Successfull txs:7917
+Final failure blitz txs:11
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9892
+Successfull txs:7914
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:5
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:3
+ 
+
+No_of_accomplishable_txs: 8831
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8553
+Successfull txs:6854
+Final failure blitz txs:276
+Inflight failure blitz txs:2
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8393
+Successfull txs:6728
+Final failure HTLC txs:233
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:204
+
+No of final to final:227
+No of final to inflight:0
+No of final to collateral:48
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:6
+No of success to inflight:0
+No of success to collateral:120
+ 
+
+No_of_accomplishable_txs: 9907
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9896
+Successfull txs:6926
+Final failure blitz txs:11
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9891
+Successfull txs:6922
+Final failure HTLC txs:11
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:5
+
+No of final to final:11
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:4
+ 
+
+No_of_accomplishable_txs: 8831
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8558
+Successfull txs:5991
+Final failure blitz txs:271
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 8319
+Successfull txs:5826
+Final failure HTLC txs:198
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:314
+
+No of final to final:192
+No of final to inflight:0
+No of final to collateral:74
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:5
+No of success to inflight:0
+No of success to collateral:162
+ 
+
+No_of_accomplishable_txs: 19805
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19753
+Successfull txs:17775
+Final failure blitz txs:52
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19733
+Successfull txs:17757
+Final failure HTLC txs:15
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:57
+
+No of final to final:15
+No of final to inflight:0
+No of final to collateral:37
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:18
+ 
+
+No_of_accomplishable_txs: 17592
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16725
+Successfull txs:15051
+Final failure blitz txs:866
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16516
+Successfull txs:14866
+Final failure HTLC txs:774
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:302
+
+No of final to final:749
+No of final to inflight:0
+No of final to collateral:110
+No of final to success:6
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:22
+No of success to inflight:0
+No of success to collateral:169
+ 
+
+No_of_accomplishable_txs: 19805
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 19753
+Successfull txs:15795
+Final failure blitz txs:52
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19694
+Successfull txs:15746
+Final failure HTLC txs:12
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:99
+
+No of final to final:12
+No of final to inflight:0
+No of final to collateral:40
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:49
+ 
+
+No_of_accomplishable_txs: 17592
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 16769
+Successfull txs:13419
+Final failure blitz txs:822
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16320
+Successfull txs:13058
+Final failure HTLC txs:681
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:591
+
+No of final to final:635
+No of final to inflight:0
+No of final to collateral:175
+No of final to success:12
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:35
+No of success to inflight:0
+No of success to collateral:338
+ 
+
+No_of_accomplishable_txs: 19805
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 19763
+Successfull txs:13834
+Final failure blitz txs:42
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19633
+Successfull txs:13742
+Final failure HTLC txs:13
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:159
+
+No of final to final:13
+No of final to inflight:0
+No of final to collateral:29
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:92
+ 
+
+No_of_accomplishable_txs: 17592
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 16819
+Successfull txs:11813
+Final failure blitz txs:772
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16165
+Successfull txs:11360
+Final failure HTLC txs:588
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:839
+
+No of final to final:533
+No of final to inflight:0
+No of final to collateral:230
+No of final to success:7
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:41
+No of success to inflight:0
+No of success to collateral:419
+ 
+
+No_of_accomplishable_txs: 29710
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 29655
+Successfull txs:26699
+Final failure blitz txs:55
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29622
+Successfull txs:26669
+Final failure HTLC txs:33
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:55
+
+No of final to final:33
+No of final to inflight:0
+No of final to collateral:22
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:30
+ 
+
+No_of_accomplishable_txs: 26509
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 24853
+Successfull txs:22396
+Final failure blitz txs:1643
+Inflight failure blitz txs:11
+Collateral failure blitz txs:2
+Successfully reached receiver in HTLC: 24306
+Successfull txs:21904
+Final failure HTLC txs:1341
+Inflight failure HTLC txs:2
+Collateral failure HTLC txs:860
+
+No of final to final:1263
+No of final to inflight:0
+No of final to collateral:356
+No of final to success:21
+
+No of inflight to final:1
+No of inflight to inflight:2
+No of inflight to collateral:8
+No of inflight to success:0
+ 
+No of success to final:68
+No of success to inflight:0
+No of success to collateral:445
+ 
+
+No_of_accomplishable_txs: 29710
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 29664
+Successfull txs:23741
+Final failure blitz txs:45
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29590
+Successfull txs:23680
+Final failure HTLC txs:19
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:101
+
+No of final to final:17
+No of final to inflight:0
+No of final to collateral:28
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:59
+ 
+
+No_of_accomplishable_txs: 26509
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 24934
+Successfull txs:20008
+Final failure blitz txs:1569
+Inflight failure blitz txs:5
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 23788
+Successfull txs:19081
+Final failure HTLC txs:1114
+Inflight failure HTLC txs:2
+Collateral failure HTLC txs:1605
+
+No of final to final:985
+No of final to inflight:0
+No of final to collateral:553
+No of final to success:22
+
+No of inflight to final:1
+No of inflight to inflight:2
+No of inflight to collateral:2
+No of inflight to success:0
+ 
+No of success to final:100
+No of success to inflight:0
+No of success to collateral:849
+ 
+
+No_of_accomplishable_txs: 29710
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 29664
+Successfull txs:20771
+Final failure blitz txs:45
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29547
+Successfull txs:20692
+Final failure HTLC txs:16
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:147
+
+No of final to final:15
+No of final to inflight:0
+No of final to collateral:30
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:78
+ 
+
+No_of_accomplishable_txs: 26509
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 25015
+Successfull txs:17588
+Final failure blitz txs:1483
+Inflight failure blitz txs:9
+Collateral failure blitz txs:2
+Successfully reached receiver in HTLC: 23301
+Successfull txs:16359
+Final failure HTLC txs:884
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:2323
+
+No of final to final:762
+No of final to inflight:0
+No of final to collateral:692
+No of final to success:24
+
+No of inflight to final:1
+No of inflight to inflight:1
+No of inflight to collateral:7
+No of inflight to success:0
+ 
+No of success to final:79
+No of success to inflight:0
+No of success to collateral:1174
+ 
+
+No_of_accomplishable_txs: 9891
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9884
+Successfull txs:8894
+Final failure blitz txs:7
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9882
+Successfull txs:8892
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8864
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8570
+Successfull txs:7715
+Final failure blitz txs:291
+Inflight failure blitz txs:2
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 8525
+Successfull txs:7676
+Final failure HTLC txs:265
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:73
+
+No of final to final:263
+No of final to inflight:0
+No of final to collateral:27
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:38
+ 
+
+No_of_accomplishable_txs: 9891
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9884
+Successfull txs:7907
+Final failure blitz txs:7
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9880
+Successfull txs:7904
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:4
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:3
+ 
+
+No_of_accomplishable_txs: 8864
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8573
+Successfull txs:6880
+Final failure blitz txs:289
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 8494
+Successfull txs:6818
+Final failure HTLC txs:249
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:120
+
+No of final to final:244
+No of final to inflight:0
+No of final to collateral:43
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:5
+No of success to inflight:0
+No of success to collateral:59
+ 
+
+No_of_accomplishable_txs: 9891
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9883
+Successfull txs:6920
+Final failure blitz txs:8
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9879
+Successfull txs:6917
+Final failure HTLC txs:8
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:4
+
+No of final to final:8
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:3
+ 
+
+No_of_accomplishable_txs: 8864
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8594
+Successfull txs:6032
+Final failure blitz txs:268
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 8456
+Successfull txs:5942
+Final failure HTLC txs:229
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:178
+
+No of final to final:223
+No of final to inflight:0
+No of final to collateral:44
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:4
+No of success to inflight:0
+No of success to collateral:87
+ 
+
+No_of_accomplishable_txs: 19755
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19715
+Successfull txs:17745
+Final failure blitz txs:40
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19704
+Successfull txs:17735
+Final failure HTLC txs:17
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:34
+
+No of final to final:16
+No of final to inflight:0
+No of final to collateral:24
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:9
+ 
+
+No_of_accomplishable_txs: 17655
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16798
+Successfull txs:15115
+Final failure blitz txs:856
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16594
+Successfull txs:14941
+Final failure HTLC txs:707
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:353
+
+No of final to final:693
+No of final to inflight:0
+No of final to collateral:155
+No of final to success:7
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:12
+No of success to inflight:0
+No of success to collateral:169
+ 
+
+No_of_accomplishable_txs: 19755
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 19721
+Successfull txs:15783
+Final failure blitz txs:34
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19699
+Successfull txs:15764
+Final failure HTLC txs:17
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:39
+
+No of final to final:15
+No of final to inflight:0
+No of final to collateral:19
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:17
+ 
+
+No_of_accomplishable_txs: 17655
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 16815
+Successfull txs:13453
+Final failure blitz txs:836
+Inflight failure blitz txs:4
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16389
+Successfull txs:13118
+Final failure HTLC txs:629
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:636
+
+No of final to final:598
+No of final to inflight:0
+No of final to collateral:223
+No of final to success:13
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:3
+No of inflight to success:0
+ 
+No of success to final:25
+No of success to inflight:0
+No of success to collateral:323
+ 
+
+No_of_accomplishable_txs: 19755
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 19730
+Successfull txs:13821
+Final failure blitz txs:25
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19687
+Successfull txs:13786
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:59
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:17
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:34
+ 
+
+No_of_accomplishable_txs: 17655
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 16866
+Successfull txs:11828
+Final failure blitz txs:786
+Inflight failure blitz txs:3
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16213
+Successfull txs:11372
+Final failure HTLC txs:496
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:945
+
+No of final to final:458
+No of final to inflight:0
+No of final to collateral:317
+No of final to success:8
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:2
+No of inflight to success:0
+ 
+No of success to final:31
+No of success to inflight:0
+No of success to collateral:433
+ 
+
+No_of_accomplishable_txs: 29669
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 29626
+Successfull txs:26675
+Final failure blitz txs:43
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29587
+Successfull txs:26639
+Final failure HTLC txs:25
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:57
+
+No of final to final:24
+No of final to inflight:0
+No of final to collateral:19
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:36
+ 
+
+No_of_accomplishable_txs: 26463
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 24925
+Successfull txs:22429
+Final failure blitz txs:1533
+Inflight failure blitz txs:5
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 24489
+Successfull txs:22041
+Final failure HTLC txs:1254
+Inflight failure HTLC txs:2
+Collateral failure HTLC txs:718
+
+No of final to final:1189
+No of final to inflight:0
+No of final to collateral:329
+No of final to success:14
+
+No of inflight to final:1
+No of inflight to inflight:2
+No of inflight to collateral:1
+No of inflight to success:1
+ 
+No of success to final:54
+No of success to inflight:0
+No of success to collateral:349
+ 
+
+No_of_accomplishable_txs: 29669
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 29638
+Successfull txs:23716
+Final failure blitz txs:31
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29500
+Successfull txs:23604
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:160
+
+No of final to final:8
+No of final to inflight:0
+No of final to collateral:23
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:112
+ 
+
+No_of_accomplishable_txs: 26463
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 24967
+Successfull txs:19985
+Final failure blitz txs:1489
+Inflight failure blitz txs:7
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 24077
+Successfull txs:19270
+Final failure HTLC txs:1011
+Inflight failure HTLC txs:2
+Collateral failure HTLC txs:1373
+
+No of final to final:918
+No of final to inflight:0
+No of final to collateral:547
+No of final to success:21
+
+No of inflight to final:1
+No of inflight to inflight:2
+No of inflight to collateral:4
+No of inflight to success:0
+ 
+No of success to final:66
+No of success to inflight:0
+No of success to collateral:670
+ 
+
+No_of_accomplishable_txs: 29669
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 29629
+Successfull txs:20742
+Final failure blitz txs:39
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 29450
+Successfull txs:20617
+Final failure HTLC txs:5
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:214
+
+No of final to final:4
+No of final to inflight:0
+No of final to collateral:35
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:125
+ 
+
+No_of_accomplishable_txs: 26463
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 25060
+Successfull txs:17573
+Final failure blitz txs:1399
+Inflight failure blitz txs:3
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 23595
+Successfull txs:16548
+Final failure HTLC txs:829
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:2038
+
+No of final to final:737
+No of final to inflight:0
+No of final to collateral:638
+No of final to success:17
+
+No of inflight to final:1
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:58
+No of success to inflight:0
+No of success to collateral:984
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9886
+Successfull txs:8896
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9886
+Successfull txs:8896
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:0
+
+No of final to final:9
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:0
+ 
+
+No_of_accomplishable_txs: 8876
+Delay: 60000.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8554
+Successfull txs:7706
+Final failure blitz txs:321
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8511
+Successfull txs:7668
+Final failure HTLC txs:293
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:72
+
+No of final to final:287
+No of final to inflight:0
+No of final to collateral:30
+No of final to success:4
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:6
+No of success to inflight:0
+No of success to collateral:36
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9887
+Successfull txs:7909
+Final failure blitz txs:8
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9885
+Successfull txs:7907
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:3
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8876
+Delay: 60000.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8559
+Successfull txs:6870
+Final failure blitz txs:316
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8478
+Successfull txs:6805
+Final failure HTLC txs:279
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:119
+
+No of final to final:274
+No of final to inflight:0
+No of final to collateral:37
+No of final to success:5
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:5
+No of success to inflight:0
+No of success to collateral:65
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9886
+Successfull txs:6917
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9883
+Successfull txs:6914
+Final failure HTLC txs:8
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:4
+
+No of final to final:8
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:3
+ 
+
+No_of_accomplishable_txs: 8876
+Delay: 60000.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8576
+Successfull txs:6017
+Final failure blitz txs:299
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8424
+Successfull txs:5912
+Final failure HTLC txs:239
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:213
+
+No of final to final:231
+No of final to inflight:0
+No of final to collateral:64
+No of final to success:4
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:107
+ 
+
+No_of_accomplishable_txs: 9897
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9887
+Successfull txs:8897
+Final failure blitz txs:10
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9885
+Successfull txs:8895
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 991
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 991
+Successfull txs:891
+Final failure blitz txs:0
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 991
+Successfull txs:891
+Final failure HTLC txs:0
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:0
+
+No of final to final:0
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:0
+ 
+
+No_of_accomplishable_txs: 9901
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9890
+Successfull txs:8902
+Final failure blitz txs:11
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9889
+Successfull txs:8901
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:1
+ 
+
+No_of_accomplishable_txs: 8825
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8525
+Successfull txs:7676
+Final failure blitz txs:300
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8476
+Successfull txs:7634
+Final failure HTLC txs:276
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:73
+
+No of final to final:271
+No of final to inflight:0
+No of final to collateral:27
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:4
+No of success to inflight:0
+No of success to collateral:40
+ 
+
+No_of_accomplishable_txs: 9883
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9873
+Successfull txs:8886
+Final failure blitz txs:10
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9871
+Successfull txs:8884
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8821
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8526
+Successfull txs:7679
+Final failure blitz txs:293
+Inflight failure blitz txs:2
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8484
+Successfull txs:7642
+Final failure HTLC txs:275
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:61
+
+No of final to final:271
+No of final to inflight:0
+No of final to collateral:20
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:3
+No of success to inflight:0
+No of success to collateral:35
+ 
+
+No_of_accomplishable_txs: 9883
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9872
+Successfull txs:7900
+Final failure blitz txs:11
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9843
+Successfull txs:7875
+Final failure HTLC txs:11
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:29
+
+No of final to final:11
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:25
+ 
+
+No_of_accomplishable_txs: 8821
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8549
+Successfull txs:6851
+Final failure blitz txs:271
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8444
+Successfull txs:6769
+Final failure HTLC txs:241
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:135
+
+No of final to final:233
+No of final to inflight:0
+No of final to collateral:34
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:7
+No of success to inflight:0
+No of success to collateral:77
+ 
+
+No_of_accomplishable_txs: 9883
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9871
+Successfull txs:6911
+Final failure blitz txs:12
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9840
+Successfull txs:6887
+Final failure HTLC txs:12
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:31
+
+No of final to final:12
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:24
+ 
+
+No_of_accomplishable_txs: 8821
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8549
+Successfull txs:6000
+Final failure blitz txs:271
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8386
+Successfull txs:5886
+Final failure HTLC txs:225
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:209
+
+No of final to final:215
+No of final to inflight:0
+No of final to collateral:52
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:8
+No of success to inflight:0
+No of success to collateral:108
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9885
+Successfull txs:8896
+Final failure blitz txs:10
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9884
+Successfull txs:8895
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:1
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:1
+ 
+
+No_of_accomplishable_txs: 8835
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8528
+Successfull txs:7681
+Final failure blitz txs:307
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8492
+Successfull txs:7651
+Final failure HTLC txs:290
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:53
+
+No of final to final:289
+No of final to inflight:0
+No of final to collateral:14
+No of final to success:4
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:33
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9883
+Successfull txs:7907
+Final failure blitz txs:12
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9879
+Successfull txs:7903
+Final failure HTLC txs:12
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:4
+
+No of final to final:12
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:4
+ 
+
+No_of_accomplishable_txs: 8835
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8537
+Successfull txs:6840
+Final failure blitz txs:298
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8456
+Successfull txs:6784
+Final failure HTLC txs:274
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:105
+
+No of final to final:267
+No of final to inflight:0
+No of final to collateral:28
+No of final to success:3
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:6
+No of success to inflight:0
+No of success to collateral:53
+ 
+
+No_of_accomplishable_txs: 9895
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9881
+Successfull txs:6914
+Final failure blitz txs:14
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9876
+Successfull txs:6909
+Final failure HTLC txs:13
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:6
+
+No of final to final:13
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:5
+ 
+
+No_of_accomplishable_txs: 8835
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8552
+Successfull txs:5990
+Final failure blitz txs:283
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8413
+Successfull txs:5902
+Final failure HTLC txs:239
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:183
+
+No of final to final:227
+No of final to inflight:0
+No of final to collateral:51
+No of final to success:4
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:10
+No of success to inflight:0
+No of success to collateral:82
+ 
+
+No_of_accomplishable_txs: 9896
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9887
+Successfull txs:8896
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9887
+Successfull txs:8896
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:0
+
+No of final to final:9
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:0
+ 
+
+No_of_accomplishable_txs: 8904
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8583
+Successfull txs:7723
+Final failure blitz txs:320
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8525
+Successfull txs:7672
+Final failure HTLC txs:303
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:75
+
+No of final to final:296
+No of final to inflight:0
+No of final to collateral:23
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:6
+No of success to inflight:0
+No of success to collateral:46
+ 
+
+No_of_accomplishable_txs: 9896
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9887
+Successfull txs:7907
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9885
+Successfull txs:7905
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:9
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8904
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8598
+Successfull txs:6889
+Final failure blitz txs:305
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8494
+Successfull txs:6814
+Final failure HTLC txs:276
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:133
+
+No of final to final:268
+No of final to inflight:0
+No of final to collateral:35
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:7
+No of success to inflight:0
+No of success to collateral:70
+ 
+
+No_of_accomplishable_txs: 9896
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9886
+Successfull txs:6916
+Final failure blitz txs:10
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9884
+Successfull txs:6914
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:2
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8904
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8621
+Successfull txs:6033
+Final failure blitz txs:282
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8437
+Successfull txs:5902
+Final failure HTLC txs:235
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:231
+
+No of final to final:219
+No of final to inflight:0
+No of final to collateral:61
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:12
+No of success to inflight:0
+No of success to collateral:121
+ 
+
+No_of_accomplishable_txs: 9901
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9885
+Successfull txs:8894
+Final failure blitz txs:16
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9882
+Successfull txs:8891
+Final failure HTLC txs:10
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:9
+
+No of final to final:10
+No of final to inflight:0
+No of final to collateral:5
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:4
+ 
+
+No_of_accomplishable_txs: 8816
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8524
+Successfull txs:7670
+Final failure blitz txs:292
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8460
+Successfull txs:7613
+Final failure HTLC txs:270
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:86
+
+No of final to final:263
+No of final to inflight:0
+No of final to collateral:29
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:7
+No of success to inflight:0
+No of success to collateral:50
+ 
+
+No_of_accomplishable_txs: 9901
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9886
+Successfull txs:7907
+Final failure blitz txs:15
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9881
+Successfull txs:7902
+Final failure HTLC txs:11
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:9
+
+No of final to final:11
+No of final to inflight:0
+No of final to collateral:2
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:7
+ 
+
+No_of_accomplishable_txs: 8816
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8524
+Successfull txs:6822
+Final failure blitz txs:292
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8433
+Successfull txs:6746
+Final failure HTLC txs:248
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:135
+
+No of final to final:241
+No of final to inflight:0
+No of final to collateral:49
+No of final to success:1
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:7
+No of success to inflight:0
+No of success to collateral:70
+ 
+
+No_of_accomplishable_txs: 9901
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9889
+Successfull txs:6920
+Final failure blitz txs:12
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9879
+Successfull txs:6911
+Final failure HTLC txs:9
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:13
+
+No of final to final:9
+No of final to inflight:0
+No of final to collateral:3
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:9
+ 
+
+No_of_accomplishable_txs: 8816
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8543
+Successfull txs:5978
+Final failure blitz txs:272
+Inflight failure blitz txs:0
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 8388
+Successfull txs:5862
+Final failure HTLC txs:225
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:203
+
+No of final to final:213
+No of final to inflight:0
+No of final to collateral:55
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:8
+No of success to inflight:0
+No of success to collateral:110
+ 
+
+No_of_accomplishable_txs: 9899
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 9892
+Successfull txs:8901
+Final failure blitz txs:7
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9888
+Successfull txs:8899
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:4
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:0
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:2
+ 
+
+No_of_accomplishable_txs: 8832
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 8511
+Successfull txs:7658
+Final failure blitz txs:321
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8433
+Successfull txs:7588
+Final failure HTLC txs:287
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:112
+
+No of final to final:281
+No of final to inflight:0
+No of final to collateral:37
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:6
+No of success to inflight:0
+No of success to collateral:66
+ 
+
+No_of_accomplishable_txs: 9899
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 9890
+Successfull txs:7912
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9883
+Successfull txs:7907
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:9
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:2
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:5
+ 
+
+No_of_accomplishable_txs: 8832
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 8513
+Successfull txs:6822
+Final failure blitz txs:319
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8351
+Successfull txs:6696
+Final failure HTLC txs:274
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:207
+
+No of final to final:268
+No of final to inflight:0
+No of final to collateral:47
+No of final to success:3
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:4
+No of success to inflight:0
+No of success to collateral:125
+ 
+
+No_of_accomplishable_txs: 9899
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 9890
+Successfull txs:6919
+Final failure blitz txs:9
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 9880
+Successfull txs:6914
+Final failure HTLC txs:8
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:11
+
+No of final to final:8
+No of final to inflight:0
+No of final to collateral:1
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:5
+ 
+
+No_of_accomplishable_txs: 8832
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 8541
+Successfull txs:5979
+Final failure blitz txs:291
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 8260
+Successfull txs:5788
+Final failure HTLC txs:235
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:337
+
+No of final to final:230
+No of final to inflight:0
+No of final to collateral:57
+No of final to success:2
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:3
+No of success to inflight:0
+No of success to collateral:190
+ 
+
+No_of_accomplishable_txs: 19796
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19776
+Successfull txs:17802
+Final failure blitz txs:20
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19763
+Successfull txs:17790
+Final failure HTLC txs:13
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:20
+
+No of final to final:13
+No of final to inflight:0
+No of final to collateral:7
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:12
+ 
+
+No_of_accomplishable_txs: 17668
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16798
+Successfull txs:15112
+Final failure blitz txs:869
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16569
+Successfull txs:14913
+Final failure HTLC txs:750
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:348
+
+No of final to final:722
+No of final to inflight:0
+No of final to collateral:140
+No of final to success:6
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:25
+No of success to inflight:0
+No of success to collateral:180
+ 
+
+No_of_accomplishable_txs: 19796
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 19776
+Successfull txs:15825
+Final failure blitz txs:20
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19752
+Successfull txs:15807
+Final failure HTLC txs:14
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:30
+
+No of final to final:14
+No of final to inflight:0
+No of final to collateral:6
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:18
+ 
+
+No_of_accomplishable_txs: 17668
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 16875
+Successfull txs:13492
+Final failure blitz txs:791
+Inflight failure blitz txs:2
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 16348
+Successfull txs:13068
+Final failure HTLC txs:590
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:730
+
+No of final to final:545
+No of final to inflight:0
+No of final to collateral:238
+No of final to success:7
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:2
+No of inflight to success:0
+ 
+No of success to final:38
+No of success to inflight:0
+No of success to collateral:393
+ 
+
+No_of_accomplishable_txs: 19796
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 19776
+Successfull txs:13847
+Final failure blitz txs:20
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19732
+Successfull txs:13814
+Final failure HTLC txs:7
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:57
+
+No of final to final:7
+No of final to inflight:0
+No of final to collateral:13
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:33
+ 
+
+No_of_accomplishable_txs: 17668
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 16946
+Successfull txs:11864
+Final failure blitz txs:720
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16132
+Successfull txs:11297
+Final failure HTLC txs:498
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:1038
+
+No of final to final:443
+No of final to inflight:0
+No of final to collateral:269
+No of final to success:7
+
+No of inflight to final:1
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:40
+No of success to inflight:0
+No of success to collateral:534
+ 
+
+No_of_accomplishable_txs: 19787
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19744
+Successfull txs:17767
+Final failure blitz txs:43
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19715
+Successfull txs:17740
+Final failure HTLC txs:16
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:56
+
+No of final to final:14
+No of final to inflight:0
+No of final to collateral:29
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:2
+No of success to inflight:0
+No of success to collateral:25
+ 
+
+No_of_accomplishable_txs: 17550
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16683
+Successfull txs:15013
+Final failure blitz txs:864
+Inflight failure blitz txs:2
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16456
+Successfull txs:14808
+Final failure HTLC txs:722
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:371
+
+No of final to final:698
+No of final to inflight:0
+No of final to collateral:162
+No of final to success:3
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:21
+No of success to inflight:0
+No of success to collateral:187
+ 
+
+No_of_accomplishable_txs: 19795
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19755
+Successfull txs:17779
+Final failure blitz txs:40
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19729
+Successfull txs:17756
+Final failure HTLC txs:20
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:46
+
+No of final to final:20
+No of final to inflight:0
+No of final to collateral:20
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:23
+ 
+
+No_of_accomplishable_txs: 17577
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16681
+Successfull txs:15007
+Final failure blitz txs:889
+Inflight failure blitz txs:6
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16466
+Successfull txs:14816
+Final failure HTLC txs:737
+Inflight failure HTLC txs:4
+Collateral failure HTLC txs:370
+
+No of final to final:711
+No of final to inflight:0
+No of final to collateral:170
+No of final to success:6
+
+No of inflight to final:0
+No of inflight to inflight:4
+No of inflight to collateral:2
+No of inflight to success:0
+ 
+No of success to final:25
+No of success to inflight:0
+No of success to collateral:172
+ 
+
+No_of_accomplishable_txs: 19795
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 19765
+Successfull txs:15813
+Final failure blitz txs:30
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19717
+Successfull txs:15775
+Final failure HTLC txs:20
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:58
+
+No of final to final:20
+No of final to inflight:0
+No of final to collateral:10
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:0
+No of success to inflight:0
+No of success to collateral:38
+ 
+
+No_of_accomplishable_txs: 17577
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 16716
+Successfull txs:13384
+Final failure blitz txs:854
+Inflight failure blitz txs:5
+Collateral failure blitz txs:2
+Successfully reached receiver in HTLC: 16270
+Successfull txs:13026
+Final failure HTLC txs:625
+Inflight failure HTLC txs:2
+Collateral failure HTLC txs:680
+
+No of final to final:587
+No of final to inflight:0
+No of final to collateral:258
+No of final to success:7
+
+No of inflight to final:0
+No of inflight to inflight:2
+No of inflight to collateral:3
+No of inflight to success:0
+ 
+No of success to final:32
+No of success to inflight:0
+No of success to collateral:333
+ 
+
+No_of_accomplishable_txs: 19795
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 19764
+Successfull txs:13836
+Final failure blitz txs:31
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19694
+Successfull txs:13788
+Final failure HTLC txs:16
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:85
+
+No of final to final:15
+No of final to inflight:0
+No of final to collateral:16
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:47
+ 
+
+No_of_accomplishable_txs: 17577
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 16782
+Successfull txs:11770
+Final failure blitz txs:786
+Inflight failure blitz txs:6
+Collateral failure blitz txs:3
+Successfully reached receiver in HTLC: 16042
+Successfull txs:11243
+Final failure HTLC txs:515
+Inflight failure HTLC txs:1
+Collateral failure HTLC txs:1019
+
+No of final to final:468
+No of final to inflight:0
+No of final to collateral:300
+No of final to success:10
+
+No of inflight to final:0
+No of inflight to inflight:1
+No of inflight to collateral:5
+No of inflight to success:0
+ 
+No of success to final:38
+No of success to inflight:0
+No of success to collateral:499
+ 
+
+No_of_accomplishable_txs: 19778
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 19748
+Successfull txs:17772
+Final failure blitz txs:30
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19730
+Successfull txs:17758
+Final failure HTLC txs:20
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:28
+
+No of final to final:19
+No of final to inflight:0
+No of final to collateral:11
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:13
+ 
+
+No_of_accomplishable_txs: 17634
+Delay: 86400.0
+Percentage of failed: 0.1
+Successfully reached receiver in Blitz: 16690
+Successfull txs:15020
+Final failure blitz txs:943
+Inflight failure blitz txs:0
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16500
+Successfull txs:14848
+Final failure HTLC txs:814
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:320
+
+No of final to final:796
+No of final to inflight:0
+No of final to collateral:135
+No of final to success:12
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:17
+No of success to inflight:0
+No of success to collateral:167
+ 
+
+No_of_accomplishable_txs: 19778
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 19750
+Successfull txs:15798
+Final failure blitz txs:27
+Inflight failure blitz txs:1
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19686
+Successfull txs:15746
+Final failure HTLC txs:12
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:80
+
+No of final to final:11
+No of final to inflight:0
+No of final to collateral:16
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:51
+ 
+
+No_of_accomplishable_txs: 17634
+Delay: 86400.0
+Percentage of failed: 0.2
+Successfully reached receiver in Blitz: 16795
+Successfull txs:13435
+Final failure blitz txs:837
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16265
+Successfull txs:13016
+Final failure HTLC txs:621
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:748
+
+No of final to final:588
+No of final to inflight:0
+No of final to collateral:239
+No of final to success:10
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:28
+No of success to inflight:0
+No of success to collateral:401
+ 
+
+No_of_accomplishable_txs: 19778
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 19758
+Successfull txs:13832
+Final failure blitz txs:20
+Inflight failure blitz txs:0
+Collateral failure blitz txs:0
+Successfully reached receiver in HTLC: 19646
+Successfull txs:13758
+Final failure HTLC txs:11
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:121
+
+No of final to final:8
+No of final to inflight:0
+No of final to collateral:12
+No of final to success:0
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:0
+No of inflight to success:0
+ 
+No of success to final:1
+No of success to inflight:0
+No of success to collateral:73
+ 
+
+No_of_accomplishable_txs: 17634
+Delay: 86400.0
+Percentage of failed: 0.3
+Successfully reached receiver in Blitz: 16833
+Successfull txs:11806
+Final failure blitz txs:799
+Inflight failure blitz txs:1
+Collateral failure blitz txs:1
+Successfully reached receiver in HTLC: 16060
+Successfull txs:11261
+Final failure HTLC txs:505
+Inflight failure HTLC txs:0
+Collateral failure HTLC txs:1069
+
+No of final to final:454
+No of final to inflight:0
+No of final to collateral:335
+No of final to success:7
+
+No of inflight to final:0
+No of inflight to inflight:0
+No of inflight to collateral:1
+No of inflight to success:0
+ 
+No of success to final:38
+No of success to inflight:0
+No of success to collateral:514
+ 
+

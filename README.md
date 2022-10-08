@@ -26,7 +26,7 @@ To instal python:
 
 In the file data/params.json:
 
--  payment_amount->payment amount of the transaction/transactions--**Float**: *[0,inf]*
+-  `payment_amount` ->payment amount of the transaction/transactions--**Float**: *[0,inf]*
 -  number_of_transactions-> the total number of transactions the simulator has to simulate--**Integer**: *[0,inf]*
 
 -  capacity_assignment-> option to assign capacity to the left or the right user in the channel--**String**: *Left|Right|Random|Default*

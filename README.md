@@ -38,3 +38,9 @@ In the file sim/config.ini:
 - `percentage_of_failed` -> percentage of generated transactions that will be initially marked as failed--**Float**: *[0,1]*
 - `delay_param` -> the time it takes to publish 1 block on chain, it correlates with operation_time parameter. The default time to publish 1 block is 10 minutes that is 600s.--**Float**: *[0, inf]*
 - `operation_time` -> the time it takes to process 1 operation (for example setting up the HTLC contract between two users), default value is 10 ms =0.01s--**Float**: *[0, inf]*
+
+## Starting the simulator
+
+After setting input parameters, you can run the simulator by running the python file:
+
+###run_simulator.py

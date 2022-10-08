@@ -43,4 +43,4 @@ In the file sim/config.ini:
 
 After setting input parameters, you can run the simulator by running the python file:
 
-### run_simulator.py
+### sim/run_simulator.py
